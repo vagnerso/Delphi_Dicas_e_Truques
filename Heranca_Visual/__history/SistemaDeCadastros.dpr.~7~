@@ -1,0 +1,21 @@
+program SistemaDeCadastros;
+
+uses
+  Vcl.Forms,
+  fMenu in 'fMenu.pas' {frmMenu},
+  fBase in 'fBase.pas' {frmBase},
+  fBasePesquisa in 'fBasePesquisa.pas' {frmBasePesquisa},
+  fBaseCadastro in 'fBaseCadastro.pas' {frmBase1};
+
+{$R *.res}
+
+begin
+  Application.Title := 'Sistema de Cadastros';
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMenu, frmMenu);
+  Application.CreateForm(TfrmBase, frmBase);
+  Application.CreateForm(TfrmBasePesquisa, frmBasePesquisa);
+  Application.CreateForm(TfrmBase1, frmBase1);
+  Application.Run;
+end.

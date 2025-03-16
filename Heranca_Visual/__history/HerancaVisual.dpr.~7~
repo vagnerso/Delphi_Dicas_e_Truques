@@ -1,0 +1,24 @@
+program HerancaVisual;
+
+uses
+  Vcl.Forms,
+  fBasePesquisa in 'fBasePesquisa.pas' {frmBasePesquisa},
+  fPesquisaProdutos in 'fPesquisaProdutos.pas' {frmPesquisaProdutos},
+  fMenu in 'fMenu.pas' {frmMenu},
+  fPesquisaClientes in 'fPesquisaClientes.pas' {frmPesquisaClientes},
+  fBaseCadastro in 'fBaseCadastro.pas' {frmBaseCadastro},
+  fCadastroProdutos in 'fCadastroProdutos.pas' {frmCadastroProdutos},
+  fCadastroClientes in 'fCadastroClientes.pas' {frmBaseCadastro1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMenu, frmMenu);
+  Application.CreateForm(TfrmPesquisaClientes, frmPesquisaClientes);
+  Application.CreateForm(TfrmBaseCadastro, frmBaseCadastro);
+  Application.CreateForm(TfrmCadastroProdutos, frmCadastroProdutos);
+  Application.CreateForm(TfrmBaseCadastro1, frmBaseCadastro1);
+  Application.Run;
+end.

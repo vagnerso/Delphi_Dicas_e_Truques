@@ -1,0 +1,6 @@
+inherited frmBaseCadastro1: TfrmBaseCadastro1
+  Caption = 'frmBaseCadastro1'
+  ExplicitLeft = 2
+  ExplicitTop = 2
+  TextHeight = 15
+end

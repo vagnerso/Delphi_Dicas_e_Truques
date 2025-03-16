@@ -1,0 +1,97 @@
+object frmBaseCadastro: TfrmBaseCadastro
+  Left = 0
+  Top = 0
+  Caption = 'T'#237'tulo do nosso cadastro'
+  ClientHeight = 557
+  ClientWidth = 875
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -20
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 28
+  object pnlTitulo: TPanel
+    Left = 0
+    Top = 0
+    Width = 875
+    Height = 81
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'T'#237'tulo do nosso cadastro'
+    Color = 3947771
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    ExplicitLeft = -81
+    ExplicitWidth = 878
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 81
+    Width = 875
+    Height = 408
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 14737658
+    ParentBackground = False
+    TabOrder = 1
+    StyleName = 'Windows'
+    ExplicitWidth = 797
+    ExplicitHeight = 311
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 489
+    Width = 875
+    Height = 68
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = 3947771
+    ParentBackground = False
+    TabOrder = 2
+    StyleName = 'Windows'
+    ExplicitTop = 392
+    ExplicitWidth = 797
+    object btnSalvar: TButton
+      Left = 675
+      Top = 0
+      Width = 200
+      Height = 68
+      Align = alRight
+      Caption = 'Salvar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnSalvarClick
+      ExplicitTop = 6
+    end
+    object btnCancelar: TButton
+      Left = 475
+      Top = 0
+      Width = 200
+      Height = 68
+      Align = alRight
+      Caption = 'Cancelar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnCancelarClick
+      ExplicitLeft = 575
+    end
+  end
+end

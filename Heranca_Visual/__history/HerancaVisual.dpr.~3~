@@ -1,0 +1,14 @@
+program HerancaVisual;
+
+uses
+  Vcl.Forms,
+  fBasePesquisa in 'fBasePesquisa.pas' {frmBasePesquisa};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmBasePesquisa, frmBasePesquisa);
+  Application.Run;
+end.

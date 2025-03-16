@@ -1,0 +1,107 @@
+inherited frmBasePesquisa: TfrmBasePesquisa
+  Caption = 'frmBasePesquisa'
+  ClientHeight = 499
+  ClientWidth = 827
+  ExplicitWidth = 839
+  ExplicitHeight = 537
+  TextHeight = 28
+  inherited pnlTitulo: TPanel
+    Width = 827
+    ExplicitWidth = 720
+  end
+  object pnlMenu: TPanel
+    Left = 0
+    Top = 65
+    Width = 827
+    Height = 64
+    Align = alTop
+    BevelOuter = bvNone
+    Color = clSilver
+    ParentBackground = False
+    TabOrder = 1
+    StyleName = 'Windows'
+    ExplicitWidth = 726
+    object btnAdicionar: TButton
+      Left = 0
+      Top = 0
+      Width = 150
+      Height = 64
+      Align = alLeft
+      Caption = 'Adicionar'
+      TabOrder = 0
+      ExplicitLeft = -26
+      ExplicitTop = -6
+    end
+    object btnExcluir: TButton
+      Left = 150
+      Top = 0
+      Width = 150
+      Height = 64
+      Align = alLeft
+      Caption = 'Excluir'
+      TabOrder = 1
+      ExplicitLeft = 8
+    end
+    object btnFecharTela: TButton
+      Left = 300
+      Top = 0
+      Width = 150
+      Height = 64
+      Align = alLeft
+      Caption = 'Fechar tela'
+      TabOrder = 2
+      ExplicitLeft = 456
+      ExplicitTop = 6
+    end
+  end
+  object pnlPesquisa: TPanel
+    Left = 0
+    Top = 129
+    Width = 827
+    Height = 104
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 2
+    StyleName = 'Windows'
+    object Label1: TLabel
+      Left = 8
+      Top = 16
+      Width = 81
+      Height = 28
+      Caption = 'Pesquisar'
+    end
+    object SearchBox1: TSearchBox
+      Left = 8
+      Top = 48
+      Width = 442
+      Height = 36
+      TabOrder = 0
+    end
+  end
+  object dbgPesquisa: TDBGrid
+    Left = 0
+    Top = 233
+    Width = 827
+    Height = 247
+    Align = alClient
+    BorderStyle = bsNone
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -20
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
+  object pnlRodape: TPanel
+    Left = 0
+    Top = 480
+    Width = 827
+    Height = 19
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = 5217522
+    ParentBackground = False
+    TabOrder = 4
+    StyleName = 'Windows'
+  end
+end

@@ -1,0 +1,73 @@
+inherited frmBaseCadastro: TfrmBaseCadastro
+  Caption = 'frmBaseCadastro'
+  ClientHeight = 510
+  ClientWidth = 877
+  ExplicitWidth = 889
+  ExplicitHeight = 548
+  TextHeight = 28
+  inherited pnlTitulo: TPanel
+    Width = 877
+    Caption = 'Formul'#225'rio Base de Cadastro'
+    ExplicitWidth = 720
+  end
+  object pnlRodape: TPanel
+    Left = 0
+    Top = 491
+    Width = 877
+    Height = 19
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = 5217522
+    ParentBackground = False
+    TabOrder = 1
+    StyleName = 'Windows'
+    ExplicitTop = 480
+    ExplicitWidth = 827
+  end
+  object pnlMenu: TPanel
+    Left = 0
+    Top = 427
+    Width = 877
+    Height = 64
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = clSilver
+    ParentBackground = False
+    TabOrder = 2
+    StyleName = 'Windows'
+    ExplicitTop = 65
+    ExplicitWidth = 726
+    object btnSalvar: TButton
+      Left = 727
+      Top = 0
+      Width = 150
+      Height = 64
+      Align = alRight
+      Caption = 'Salvar'
+      TabOrder = 0
+      ExplicitLeft = 0
+    end
+    object btnCancelar: TButton
+      Left = 577
+      Top = 0
+      Width = 150
+      Height = 64
+      Align = alRight
+      Caption = 'Cancelar'
+      TabOrder = 1
+      ExplicitTop = -6
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 65
+    Width = 877
+    Height = 362
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 3
+    StyleName = 'Windows'
+  end
+end

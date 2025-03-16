@@ -1,0 +1,28 @@
+unit fBaseCadastro;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, fBase, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TfrmBase1 = class(TfrmBase)
+    pnlRodape: TPanel;
+    pnlMenu: TPanel;
+    btnSalvar: TButton;
+    btnCancelar: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmBase1: TfrmBase1;
+
+implementation
+
+{$R *.dfm}
+
+end.

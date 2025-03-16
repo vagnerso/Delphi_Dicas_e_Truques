@@ -1,0 +1,80 @@
+inherited frmBaseCadastro: TfrmBaseCadastro
+  Caption = 'frmBaseCadastro'
+  ClientWidth = 719
+  ExplicitWidth = 731
+  TextHeight = 15
+  inherited pnlTitulo: TPanel
+    Width = 719
+    Caption = 'Formul'#225'rio Base de Cadastro'
+    ExplicitWidth = 655
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 436
+    Width = 719
+    Height = 56
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 1
+    StyleName = 'Windows'
+    ExplicitLeft = -154
+    ExplicitTop = 73
+    ExplicitWidth = 873
+    object btnCancelar: TButton
+      Left = 419
+      Top = 0
+      Width = 150
+      Height = 56
+      Align = alRight
+      Caption = 'Cancelar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnCancelarClick
+      ExplicitLeft = 0
+    end
+    object btnSalvar: TButton
+      Left = 569
+      Top = 0
+      Width = 150
+      Height = 56
+      Align = alRight
+      Caption = 'Salvar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnSalvarClick
+      ExplicitLeft = 575
+      ExplicitTop = -6
+    end
+  end
+  object frmBaseCadastro: TPanel
+    Left = 0
+    Top = 73
+    Width = 719
+    Height = 363
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 14737658
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 2
+    StyleName = 'Windows'
+    ExplicitHeight = 341
+  end
+end

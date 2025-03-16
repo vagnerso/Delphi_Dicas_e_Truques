@@ -1,0 +1,110 @@
+object frmMenu: TfrmMenu
+  Left = 0
+  Top = 0
+  Caption = 'Menu do Sistema'
+  ClientHeight = 526
+  ClientWidth = 760
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 104
+    Top = 176
+    Width = 250
+    Height = 89
+    Cursor = crHandPoint
+    BevelOuter = bvNone
+    Caption = 'Pesquisa de Produtos'
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = 3947771
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    OnClick = Panel1Click
+  end
+  object Panel2: TPanel
+    Left = 392
+    Top = 176
+    Width = 250
+    Height = 89
+    Cursor = crHandPoint
+    BevelOuter = bvNone
+    Caption = 'Pesquisa de Clientes'
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = 3947771
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 1
+    StyleName = 'Windows'
+  end
+  object Panel3: TPanel
+    Left = 104
+    Top = 304
+    Width = 250
+    Height = 89
+    Cursor = crHandPoint
+    BevelOuter = bvNone
+    Caption = 'Cadastro de Produtos'
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = 3947771
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 2
+    StyleName = 'Windows'
+  end
+  object Panel4: TPanel
+    Left = 392
+    Top = 304
+    Width = 250
+    Height = 89
+    Cursor = crHandPoint
+    BevelOuter = bvNone
+    Caption = 'Cadastro de Clientes'
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = 3947771
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 3
+    StyleName = 'Windows'
+  end
+  object Panel5: TPanel
+    Left = 0
+    Top = 0
+    Width = 760
+    Height = 100
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Sistema de cadastros'
+    Color = 3947771
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -33
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 4
+    StyleName = 'Windows'
+  end
+end

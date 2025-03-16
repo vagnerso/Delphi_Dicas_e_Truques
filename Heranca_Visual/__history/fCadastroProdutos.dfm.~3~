@@ -1,0 +1,31 @@
+inherited frmCadastroProdutos: TfrmCadastroProdutos
+  Caption = 'frmCadastroProdutos'
+  ExplicitLeft = 2
+  ExplicitTop = 2
+  TextHeight = 15
+  inherited pnlTitulo: TPanel
+    Caption = 'Cadastro de Produtos'
+    ExplicitWidth = 713
+  end
+  inherited Panel1: TPanel
+    ExplicitLeft = 0
+    ExplicitTop = 405
+    ExplicitWidth = 713
+    inherited btnCancelar: TButton
+      ExplicitLeft = 413
+    end
+    inherited btnSalvar: TButton
+      ExplicitLeft = 563
+      ExplicitTop = 0
+    end
+  end
+  inherited Panel3: TPanel
+    ExplicitLeft = 0
+    ExplicitTop = 461
+    ExplicitWidth = 713
+  end
+  inherited frmBaseCadastro: TPanel
+    ExplicitWidth = 713
+    ExplicitHeight = 332
+  end
+end

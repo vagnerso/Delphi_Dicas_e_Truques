@@ -1,0 +1,24 @@
+unit fBasePesquisa;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, fBase, Vcl.ExtCtrls;
+
+type
+  TfrmBasePesquisa = class(TfrmBase)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmBasePesquisa: TfrmBasePesquisa;
+
+implementation
+
+{$R *.dfm}
+
+end.

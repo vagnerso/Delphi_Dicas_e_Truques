@@ -1,0 +1,16 @@
+inherited frmPesquisaClientes: TfrmPesquisaClientes
+  Caption = 'frmPesquisaClientes'
+  ExplicitLeft = 2
+  ExplicitTop = 2
+  TextHeight = 23
+  inherited pnlTitulo: TPanel
+    ExplicitWidth = 872
+  end
+  inherited pnlRodape: TPanel
+    ExplicitTop = 517
+    ExplicitWidth = 872
+  end
+  inherited pnlPesquisa: TPanel
+    ExplicitWidth = 872
+  end
+end

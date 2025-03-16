@@ -1,0 +1,9 @@
+inherited frmBasePesquisa: TfrmBasePesquisa
+  Caption = 'frmBasePesquisa'
+  ExplicitLeft = 2
+  ExplicitTop = 2
+  TextHeight = 15
+  inherited pnlTitulo: TPanel
+    ExplicitWidth = 655
+  end
+end

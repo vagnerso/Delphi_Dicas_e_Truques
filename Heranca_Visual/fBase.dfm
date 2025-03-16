@@ -1,0 +1,35 @@
+object frmBase: TfrmBase
+  Left = 0
+  Top = 0
+  Caption = 'frmBase'
+  ClientHeight = 492
+  ClientWidth = 661
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  OnShow = FormShow
+  TextHeight = 15
+  object pnlTitulo: TPanel
+    Left = 0
+    Top = 0
+    Width = 661
+    Height = 73
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Formul'#225'rio Base'
+    Color = 3947771
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+  end
+end

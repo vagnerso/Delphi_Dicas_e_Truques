@@ -1,0 +1,91 @@
+object frmBasePesquisa: TfrmBasePesquisa
+  Left = 0
+  Top = 0
+  Caption = 'T'#237'tulo do nosso formul'#225'rio'
+  ClientHeight = 549
+  ClientWidth = 878
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -17
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 23
+  object pnlTitulo: TPanel
+    Left = 0
+    Top = 0
+    Width = 878
+    Height = 81
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'T'#237'tulo do nosso formul'#225'rio'
+    Color = 3947771
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+  end
+  object pnlRodape: TPanel
+    Left = 0
+    Top = 526
+    Width = 878
+    Height = 23
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = 3947771
+    ParentBackground = False
+    TabOrder = 1
+    StyleName = 'Windows'
+  end
+  object pnlPesquisa: TPanel
+    Left = 0
+    Top = 81
+    Width = 878
+    Height = 88
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 14737658
+    ParentBackground = False
+    TabOrder = 2
+    StyleName = 'Windows'
+    object Label1: TLabel
+      Left = 16
+      Top = 11
+      Width = 131
+      Height = 23
+      Caption = 'Texto a pesquisar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 3947771
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object sbxPesquisa: TSearchBox
+      Left = 16
+      Top = 40
+      Width = 257
+      Height = 31
+      TabOrder = 0
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 169
+    Width = 878
+    Height = 357
+    Align = alClient
+    BorderStyle = bsNone
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -17
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
+end

@@ -1,0 +1,34 @@
+object frmBase: TfrmBase
+  Left = 0
+  Top = 0
+  ClientHeight = 455
+  ClientWidth = 726
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -20
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnShow = FormShow
+  TextHeight = 28
+  object pnlTitulo: TPanel
+    Left = 0
+    Top = 0
+    Width = 726
+    Height = 65
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'T'#237'tulo do formul'#225'rio'
+    Color = 5217522
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    ExplicitWidth = 628
+  end
+end

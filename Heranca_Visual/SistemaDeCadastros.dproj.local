@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/10/10 19:40:56.000.115,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/10 17:44:12.000.810,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/10 17:52:04.000.311,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/10 17:56:00.000.131,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/10 18:40:10.000.051,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/19 20:55:29.000.471,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/07/19 21:18:38.000.983,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/08/23 19:17:52.000.749,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:16:55.580,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:17:31.026,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fMenu.pas=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:17:31.026,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fMenu.dfm=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2025/03/16 14:17:39.711,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\SistemaDeCadastros.dproj=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2025/03/16 14:20:50.920,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:24:05.197,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fBase.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:24:05.197,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fBase.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.dfm</Transaction>
+    <Transaction>2025/03/16 14:24:39.534,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:25:02.183,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fBasePesquisa.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:25:02.183,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fBasePesquisa.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.dfm</Transaction>
+    <Transaction>2025/03/16 14:30:19.171,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:31:50.787,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fBaseCadastro.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.dfm</Transaction>
+    <Transaction>2025/03/16 14:31:50.787,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fBaseCadastro.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:32:42.117,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:33:04.834,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fPesquisaProdutos.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.dfm</Transaction>
+    <Transaction>2025/03/16 14:33:04.834,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fPesquisaProdutos.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:33:30.626,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:33:48.914,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fPesquisaClientes.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:33:48.914,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fPesquisaClientes.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.dfm</Transaction>
+    <Transaction>2025/03/16 14:34:46.725,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:35:12.975,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fCadastroProdutos.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.dfm</Transaction>
+    <Transaction>2025/03/16 14:35:12.975,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fCadastroProdutos.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:35:23.849,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+    <Transaction>2025/03/16 14:35:44.919,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fCadastroClientes.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.dfm</Transaction>
+    <Transaction>2025/03/16 14:35:44.919,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\fCadastroClientes.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Heranca_Visual\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

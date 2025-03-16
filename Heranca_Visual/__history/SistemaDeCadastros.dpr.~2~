@@ -1,0 +1,16 @@
+program SistemaDeCadastros;
+
+uses
+  Vcl.Forms,
+  fMenu in 'fMenu.pas' {frmMenu},
+  fBase in 'fBase.pas' {frmBase};
+
+{$R *.res}
+
+begin
+  Application.Title := 'Sistema de Cadastros';
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMenu, frmMenu);
+  Application.Run;
+end.

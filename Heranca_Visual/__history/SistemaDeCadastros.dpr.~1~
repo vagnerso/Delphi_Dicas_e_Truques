@@ -1,0 +1,14 @@
+program SistemaDeCadastros;
+
+uses
+  Vcl.Forms,
+  fMenu in 'fMenu.pas' {frmMenu};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMenu, frmMenu);
+  Application.Run;
+end.
