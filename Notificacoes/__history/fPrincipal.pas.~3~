@@ -1,0 +1,52 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.TlHelp32, System.SysUtils, Vcl.StdCtrls, Vcl.Forms,
+  Vcl.Controls, System.Classes, Vcl.Dialogs, REST.Types, REST.Client,
+  Data.Bind.Components, Data.Bind.ObjectScope, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, REST.Response.Adapter;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    RESTClient1: TRESTClient;
+    RESTRequest1: TRESTRequest;
+    RESTResponse1: TRESTResponse;
+    Memo1: TMemo;
+    RESTResponseDataSetAdapter1: TRESTResponseDataSetAdapter;
+    FDMemTable1: TFDMemTable;
+    DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+uses
+  Winapi.Messages;
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+
+begin
+  RESTRequest1.Execute;
+
+  if RESTResponse1.StatusCode = 200 then
+  begin
+    memo1.Text := RESTResponse1.Content;
+  end;
+end;
+
+end.

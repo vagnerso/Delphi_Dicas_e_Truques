@@ -1,0 +1,106 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,
+  Vcl.ExtCtrls, Rest.Json;
+
+
+type TEndereco = class
+  private
+    FRua: string;
+    FNumero: string;
+    FBairro: string;
+    FCidade: string;
+    FCep: Integer;
+
+  public
+    property Rua: string read FRua write FRua;
+    property Numero: string read FNumero write FNumero;
+    property Bairro: string read FBairro write FBairro;
+    property Cidade: string read FCidade write FCidade;
+    property Cep: Integer read FCep write FCep;
+
+end;
+
+type TPessoa = class
+  private
+    FNome: string;
+    FCpf: string;
+    FLimiteDeCredito: Currency;
+    FEndereco: TEndereco;
+
+  public
+    destructor Destroy; override;
+    property Nome: string read FNome write FNome;
+    property Cpf: string read FCpf write FCpf;
+    property LimiteDeCredito: Currency read FLimiteDeCredito write FLimiteDeCredito;
+    property Endereco: TEndereco read FEndereco write FEndereco;
+    constructor Create;
+
+end;
+
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Button1: TButton;
+    mmoJson: TMemo;
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.Button2Click(Sender: TObject);
+var
+  lPessoa: TPessoa;
+  lJsonString: string;
+begin
+  mmoJson.Clear;
+
+  lPessoa := TPessoa.Create;
+  try
+
+    lPessoa.Nome := 'Vagner Oliveira';
+    lPessoa.Cpf := '012345678910';
+    lPessoa.LimiteDeCredito := 10.99;
+    lPessoa.Endereco.Rua := 'Rua das Flores';
+    lPessoa.Endereco.Numero := '500';
+    lPessoa.Endereco.Bairro := 'Oliveira';
+    lPessoa.Endereco.Cidade := 'Porto Alegre';
+    lPessoa.Endereco.Cep := 99999000;
+
+    lJsonString := TJson.ObjectToJsonString(lPessoa);
+    mmoJson.Text := lJsonString;
+
+  finally
+    lPessoa.Free;
+  end;
+
+end;
+
+{ TPessoa }
+
+constructor TPessoa.Create;
+begin
+  FEndereco := TEndereco.Create;
+end;
+
+destructor TPessoa.Destroy;
+begin
+  FEndereco.Free;
+  inherited;
+end;
+
+end.

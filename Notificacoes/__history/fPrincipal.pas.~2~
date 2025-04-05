@@ -1,0 +1,58 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.TlHelp32, System.SysUtils, Vcl.StdCtrls, Vcl.Forms,
+  Vcl.Controls, System.Classes;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    ListBox1: TListBox;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+uses
+  Winapi.Messages;
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  Snap: THandle;
+  ProcEntry: TProcessEntry32;
+begin
+  ListBox1.Items.Clear; // Limpa a lista antes de adicionar os processos
+
+  Snap := CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0); // Captura os processos do sistema
+  if Snap = INVALID_HANDLE_VALUE then
+  begin
+    ShowMessage('Erro ao capturar os processos.');
+    Exit;
+  end;
+
+  ProcEntry.dwSize := SizeOf(TProcessEntry32);
+
+  // Obtém o primeiro processo
+  if Process32First(Snap, ProcEntry) then
+  begin
+    repeat
+      // Adiciona o nome do processo e o ID na ListBox
+      ListBox1.Items.Add(Format('%s (PID: %d)', [ProcEntry.szExeFile, ProcEntry.th32ProcessID]));
+    until not Process32Next(Snap, ProcEntry); // Continua até o último processo
+  end;
+
+  CloseHandle(Snap); // Fecha o snapshot
+end;
+
+end.
