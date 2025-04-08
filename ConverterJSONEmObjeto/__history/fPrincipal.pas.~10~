@@ -1,0 +1,100 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type TCidade = class
+  private
+    FCodigo: Integer;
+    FNome: string;
+    FEstado: string;
+
+  public
+  property Codigo: Integer read FCodigo write FCodigo;
+  property Nome: string read FNome write FNome;
+  property Estado: string read FEstado write FEstado;
+end;
+
+type TEndereco = class
+  private
+    FRua: string;
+    FBairro: string;
+    FCep: string;
+    FCidade: TCidade;
+
+  public
+    destructor Destroy; override;
+    property Rua: string read FRua write FRua;
+    property Bairro: string read FBairro write FBairro;
+    property Cep: string read FCep write FCep;
+    property Cidade: TCidade read FCidade write FCidade;
+    constructor Create;
+
+end;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Button1: TButton;
+    mmoJson: TMemo;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.Button1Click(Sender: TObject);
+begin
+
+//{
+//  "Nome": "João Silva",
+//  "Idade": 35,
+//  "Cpf": "12354658791",
+//  "LimiteDeCredito": 99.99,
+//  "Endereco": {
+//    "Rua": "Rua das Flores",
+//    "Bairro": "Centro",
+//    "CEP": "01234-567",
+//    "Cidade": {
+//      "Codigo": "999999",
+//      "Nome": "São Paulo",
+//      "Estado": "SP"
+//    }
+//  }
+//}
+end;
+
+procedure TfrmPrincipal.Button2Click(Sender: TObject);
+begin
+
+end;
+
+{ TPessoa }
+
+{ TEndereco }
+
+constructor TEndereco.Create;
+begin
+  FCidade := TCidade.Create;
+end;
+
+destructor TEndereco.Destroy;
+begin
+  FCidade.free;
+  inherited;
+end;
+
+end.
