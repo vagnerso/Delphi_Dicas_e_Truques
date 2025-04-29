@@ -1,0 +1,55 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, REST.Types, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, REST.Client,
+  Data.Bind.Components, Data.Bind.ObjectScope, Vcl.StdCtrls, Vcl.ExtCtrls, Rest.Json,
+  System.JSON,IdSSLOpenSSL, Vcl.Imaging.jpeg, Vcl.Imaging.pngimage, IdIOHandler,
+  System.Net.HttpClient, System.Net.HttpClientComponent, System.Net.URLClient,
+  IdIOHandlerSocket, IdIOHandlerStack, IdSSL, Vcl.ComCtrls, Vcl.WinXPanels;
+
+type
+  TfrmPrincipal = class(TForm)
+    RESTClient: TRESTClient;
+    RESTRequest: TRESTRequest;
+    RESTResponse: TRESTResponse;
+    NetHTTPClient1: TNetHTTPClient;
+    pnlRodape: TPanel;
+    Label1: TLabel;
+    pnlTitulo: TPanel;
+    PageControl1: TPageControl;
+    tabPesquisa: TTabSheet;
+    tabResponse: TTabSheet;
+    edtPesquisa: TEdit;
+    btnBuscar: TButton;
+    Memo1: TMemo;
+    pnlPokemonImage: TPanel;
+    imgPokemon: TImage;
+    pnlPokemonInfo: TPanel;
+    lblNome: TLabel;
+    lblAltura: TLabel;
+    lblPeso: TLabel;
+    Label3: TLabel;
+    lblBaseExperience: TLabel;
+    lblId: TLabel;
+    Label2: TLabel;
+  private
+    { Private declarations }
+
+
+  public
+    { Public declarations }
+
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+end.

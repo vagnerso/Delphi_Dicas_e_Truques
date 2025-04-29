@@ -1,0 +1,161 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, REST.Types, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, REST.Client,
+  Data.Bind.Components, Data.Bind.ObjectScope, Vcl.StdCtrls, Vcl.ExtCtrls, Rest.Json,
+  System.JSON,IdSSLOpenSSL, Vcl.Imaging.jpeg, Vcl.Imaging.pngimage, IdIOHandler,
+  System.Net.HttpClient, System.Net.HttpClientComponent, System.Net.URLClient,
+  IdIOHandlerSocket, IdIOHandlerStack, IdSSL, Vcl.ComCtrls, Vcl.WinXPanels;
+
+type
+  TfrmPrincipal = class(TForm)
+    RESTClient: TRESTClient;
+    RESTRequest: TRESTRequest;
+    RESTResponse: TRESTResponse;
+    IdHTTP: TIdHTTP;
+    IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL;
+    NetHTTPClient1: TNetHTTPClient;
+    pnlRodape: TPanel;
+    Label1: TLabel;
+    pnlTitulo: TPanel;
+    PageControl1: TPageControl;
+    tabPesquisa: TTabSheet;
+    tabResponse: TTabSheet;
+    edtPesquisa: TEdit;
+    btnBuscar: TButton;
+    Memo1: TMemo;
+    pnlPokemonImage: TPanel;
+    imgPokemon: TImage;
+    pnlPokemonInfo: TPanel;
+    lblNome: TLabel;
+    lblAltura: TLabel;
+    lblPeso: TLabel;
+    Label3: TLabel;
+    lblBaseExperience: TLabel;
+    lblId: TLabel;
+    procedure btnBuscarClick(Sender: TObject);
+    procedure edtPesquisaChange(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+    procedure CarregarImagem(const URL: string);
+    procedure LimparCampos;
+
+  public
+    { Public declarations }
+
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnBuscarClick(Sender: TObject);
+var
+  lNomePokemon, lImgURL: string;
+  lJSONObj: TJSONObject;
+begin
+  Screen.Cursor := crHourGlass;
+
+  lNomePokemon := LowerCase(edtPesquisa.Text); // pega o nome/id
+
+  RESTClient.BaseURL := 'https://pokeapi.co/api/v2/pokemon/' + lNomePokemon;
+  RESTRequest.Method := rmGET;
+
+  try
+    RESTRequest.Execute;
+
+    if RESTResponse.StatusCode = 200 then
+    begin
+      lJSONObj := RESTResponse.JSONValue as TJSONObject;
+
+      lblId.Caption := 'ID: ' + lJSONObj.GetValue<string>('id');
+      lblNome.Caption := lJSONObj.GetValue<string>('name');
+      lblAltura.Caption := 'Altura: ' + lJSONObj.GetValue<string>('height');
+      lblPeso.Caption := 'Peso: ' + lJSONObj.GetValue<string>('weight');
+      lblBaseExperience.Caption := 'Experiência base: ' + lJSONObj.GetValue<string>('base_experience');
+      Memo1.Text := RESTResponse.Content;
+
+      lImgURL := lJSONObj
+        .GetValue<TJSONObject>('sprites')
+        .GetValue<string>('front_default');
+
+      if Trim(lImgURL) <> '' then
+      begin
+        CarregarImagem(lImgURL)
+      end
+      else
+      begin
+        ShowMessage('Imagem não disponível.');
+      end;
+
+    end
+    else
+    begin
+      ShowMessage('Pokémon não encontrado!');
+    end;
+
+  except
+    on E: Exception do
+      ShowMessage('Erro: ' + E.Message);
+  end;
+
+  Screen.Cursor := crDefault;
+end;
+
+procedure TfrmPrincipal.CarregarImagem(const URL: string);
+var
+  lMemoryStream: TMemoryStream;
+  lPNGImage: TPngImage;
+begin
+  lMemoryStream := TMemoryStream.Create;
+  try
+    NetHTTPClient1.Get(URL, lMemoryStream);
+    lMemoryStream.Position := 0;
+
+    lPNGImage := TPngImage.Create;
+    try
+      lPNGImage.LoadFromStream(lMemoryStream);
+      imgPokemon.Picture.Assign(lPNGImage);
+    finally
+      lPNGImage.Free;
+    end;
+
+  finally
+    lMemoryStream.Free;
+  end;
+end;
+
+procedure TfrmPrincipal.edtPesquisaChange(Sender: TObject);
+begin
+
+  if (Trim(edtPesquisa.Text) = EmptyStr) then
+  begin
+    LimparCampos;
+  end;
+
+end;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  LimparCampos;
+end;
+
+procedure TfrmPrincipal.LimparCampos;
+begin
+  imgPokemon.Picture.LoadFromFile(ExtractFilePath(Application.ExeName) + '/Pokebola.png');
+  lblId.Caption := EmptyStr;
+  lblNome.Caption := EmptyStr;
+  lblAltura.Caption := EmptyStr;
+  lblPeso.Caption := EmptyStr;
+  lblBaseExperience.Caption := EmptyStr;
+end;
+
+end.
