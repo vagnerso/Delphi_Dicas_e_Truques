@@ -1,0 +1,75 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, comObj,
+  Vcl.ComCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    btnConverter: TButton;
+    lstListaVozes: TListBox;
+    Button1: TButton;
+    mmoTexto: TMemo;
+    Label1: TLabel;
+    Label2: TLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure btnConverterClick(Sender: TObject);
+  private
+    { Private declarations }
+    procedure ListarVozes(pLista: TStrings);
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+
+{ TfrmPrincipal }
+
+procedure TfrmPrincipal.btnConverterClick(Sender: TObject);
+var
+  lVoz: OleVariant;
+begin
+
+  lVoz := CreateOleObject('SAPI.SpVoice');
+  lVoz.Voice := lVoz.GetVoices.Item(lstListaVozes.ItemIndex);
+  lVoz.Volume := trbVolume.Position;
+  lVoz.Speak(mmoTexto.Text);
+
+end;
+
+procedure TfrmPrincipal.Button1Click(Sender: TObject);
+begin
+
+  lstListaVozes.Clear;
+  ListarVozes(lstListaVozes.Items);
+
+end;
+
+procedure TfrmPrincipal.ListarVozes(pLista: TStrings);
+var
+  lVoz: OleVariant;
+  I: Integer;
+begin
+
+  lVoz := CreateOleObject('SAPI.SpVoice');
+
+  for I := 0 to lVoz.GetVoices.Count - 1 do
+  begin
+    pLista.Add(lVoz.GetVoices.Item[I].GetDescription);
+  end;
+
+end;
+
+end.

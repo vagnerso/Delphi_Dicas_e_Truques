@@ -1,0 +1,41 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    btnConverter: TButton;
+    ListBox1: TListBox;
+    Button1: TButton;
+    mmoTexto: TMemo;
+    Label1: TLabel;
+    Label2: TLabel;
+  private
+    procedure ListarVozes(Lista: TStrings);
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.ListarVozes(Lista: TStrings);
+
+begin
+
+
+end;
+
+end.

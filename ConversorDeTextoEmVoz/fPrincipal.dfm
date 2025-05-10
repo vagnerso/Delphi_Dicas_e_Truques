@@ -1,0 +1,181 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Conversor de texto em voz'
+  ClientHeight = 583
+  ClientWidth = 902
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -20
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 28
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 902
+    Height = 64
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Conversor de texto em voz'
+    Color = 7552521
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    ExplicitWidth = 874
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 64
+    Width = 902
+    Height = 495
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 1
+    StyleName = 'Windows'
+    ExplicitTop = 58
+    object Label1: TLabel
+      Left = 8
+      Top = 22
+      Width = 433
+      Height = 35
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Escolha a voz desejada'
+      Color = 12615680
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+      StyleName = 'Windows'
+    end
+    object Label2: TLabel
+      Left = 456
+      Top = 22
+      Width = 417
+      Height = 35
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Informe o texto'
+      Color = 12615680
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+      StyleName = 'Windows'
+    end
+    object Label3: TLabel
+      Left = 8
+      Top = 401
+      Width = 66
+      Height = 28
+      Caption = 'Volume'
+    end
+    object btnConverter: TButton
+      Left = 456
+      Top = 417
+      Width = 417
+      Height = 58
+      Caption = 'Converter texto em fala'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnConverterClick
+    end
+    object lstListaVozes: TListBox
+      Left = 8
+      Top = 132
+      Width = 433
+      Height = 263
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 7552521
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ItemHeight = 23
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Button1: TButton
+      Left = 8
+      Top = 67
+      Width = 433
+      Height = 57
+      Caption = 'Listar vozes do Windows'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      StyleName = 'Windows'
+      OnClick = Button1Click
+    end
+    object mmoTexto: TMemo
+      Left = 456
+      Top = 67
+      Width = 417
+      Height = 328
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      Lines.Strings = (
+        '')
+      ParentFont = False
+      TabOrder = 3
+    end
+    object trbVolume: TTrackBar
+      Left = 8
+      Top = 433
+      Width = 433
+      Height = 45
+      Max = 100
+      TabOrder = 4
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 559
+    Width = 902
+    Height = 24
+    Align = alBottom
+    BevelOuter = bvNone
+    Caption = 'Vagner Oliveira | Dicas de Programa'#231#227'o'
+    Color = 7552521
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 2
+    StyleName = 'Windows'
+    ExplicitWidth = 809
+  end
+end
