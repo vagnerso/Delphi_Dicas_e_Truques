@@ -1,0 +1,137 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 
+    'Explorando o ShellExecute no Delphi: Abra Sites e Programas Faci' +
+    'lmente!'
+  ClientHeight = 431
+  ClientWidth = 852
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -20
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 28
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 852
+    Height = 64
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 
+      'Explorando o ShellExecute no Delphi: Abra Sites e Programas Faci' +
+      'lmente!'
+    Color = clBlack
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    ExplicitWidth = 896
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 64
+    Width = 852
+    Height = 343
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 1
+    StyleName = 'Windows'
+    ExplicitWidth = 896
+    ExplicitHeight = 486
+    object Label1: TLabel
+      Left = 208
+      Top = 37
+      Width = 425
+      Height = 67
+      Cursor = crHandPoint
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Abrir Programa'
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+      StyleName = 'Windows'
+    end
+    object Label2: TLabel
+      Left = 208
+      Top = 125
+      Width = 425
+      Height = 67
+      Cursor = crHandPoint
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Abrir Site'
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+      StyleName = 'Windows'
+    end
+    object Label3: TLabel
+      Left = 208
+      Top = 214
+      Width = 425
+      Height = 67
+      Cursor = crHandPoint
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Abrir Arquivo'
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+      StyleName = 'Windows'
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 407
+    Width = 852
+    Height = 24
+    Align = alBottom
+    BevelOuter = bvNone
+    Caption = 'Vagner Oliveira | Dicas de Programa'#231#227'o'
+    Color = clSilver
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 2
+    StyleName = 'Windows'
+    ExplicitTop = 550
+    ExplicitWidth = 896
+  end
+end
