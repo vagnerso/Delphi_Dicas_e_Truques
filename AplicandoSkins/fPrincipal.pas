@@ -6,18 +6,36 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
   Vcl.ComCtrls, ShellApi, Vcl.WindowsStore, Vcl.WinXCtrls, Vcl.WinXCalendars,
-  Vcl.TitleBarCtrls, Vcl.ControlList;
+  Vcl.TitleBarCtrls, Vcl.ControlList, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TfrmPrincipal = class(TForm)
     Panel1: TPanel;
+    Panel2: TPanel;
+    SearchBox1: TSearchBox;
+    ComboBox1: TComboBox;
+    DBGrid1: TDBGrid;
+    Panel3: TPanel;
+    Panel4: TPanel;
     Label1: TLabel;
+    Memo1: TMemo;
+    CheckBox1: TCheckBox;
+    RadioGroup1: TRadioGroup;
+    Edit1: TEdit;
+    Panel5: TPanel;
+    Button3: TButton;
     Button1: TButton;
-    procedure pnlAbrirProgramaClick(Sender: TObject);
-    procedure pnlTratarErroAoAbrirArquivoClick(Sender: TObject);
-    procedure pnlAbrirPastaClick(Sender: TObject);
-    procedure pnlAbrirArquivoClick(Sender: TObject);
-    procedure pnlAbrirSiteClick(Sender: TObject);
+    Label2: TLabel;
+    FDMemTable1: TFDMemTable;
+    FDMemTable1Nome: TStringField;
+    FDMemTable1Ativo: TStringField;
+    FDMemTable1Tipo: TStringField;
+    DataSource1: TDataSource;
+    CalendarPicker1: TCalendarPicker;
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
 
@@ -35,48 +53,32 @@ implementation
 
 { TfrmPrincipal }
 
-procedure TfrmPrincipal.pnlAbrirArquivoClick(Sender: TObject);
+procedure TfrmPrincipal.FormShow(Sender: TObject);
 begin
-  ShellExecute(Handle,
-               'open',
-               'chrome.exe',
-               'c:\temp\linguagem_programacao.pdf',
-               nil,
-               SW_SHOWNORMAL);
-end;
+  FDMemTable1.CreateDataSet;
+  FDMemTable1.Append;
+  FDMemTable1Nome.AsString := 'Vagner';
+  FDMemTable1Ativo.AsString := 'Sim';
+  FDMemTable1Tipo.AsString := 'Opção 1';
+  FDMemTable1.Post;
 
-procedure TfrmPrincipal.pnlAbrirPastaClick(Sender: TObject);
-begin
-  ShellExecute(Handle,
-               'open',
-               'C:\temp',
-               nil,
-               nil,
-               SW_SHOWNORMAL);
-end;
+  FDMemTable1.Append;
+  FDMemTable1Nome.AsString := 'Ana';
+  FDMemTable1Ativo.AsString := 'Sim';
+  FDMemTable1Tipo.AsString := 'Opção 3';
+  FDMemTable1.Post;
 
-procedure TfrmPrincipal.pnlAbrirProgramaClick(Sender: TObject);
-begin
-  ShellExecute(Handle, 'open', 'notepad.exe', nil, nil, SW_SHOWNORMAL);
-end;
+  FDMemTable1.Append;
+  FDMemTable1Nome.AsString := 'Pedro';
+  FDMemTable1Ativo.AsString := 'Não';
+  FDMemTable1Tipo.AsString := 'Opção 2';
+  FDMemTable1.Post;
 
-procedure TfrmPrincipal.pnlAbrirSiteClick(Sender: TObject);
-begin
-  ShellExecute(Handle,
-               'open',
-               'www.google.com',
-               nil,
-               nil,
-               SW_SHOWNORMAL);
-end;
-
-procedure TfrmPrincipal.pnlTratarErroAoAbrirArquivoClick(Sender: TObject);
-var
-  Retorno: HINST;
-begin
-  Retorno := ShellExecute(Handle, 'open', 'C:\Inexistente\arquivo.txt', nil, nil, SW_SHOWNORMAL);
-  if Retorno <= 32 then
-    ShowMessage('Erro ao abrir o arquivo.');
+  FDMemTable1.Append;
+  FDMemTable1Nome.AsString := 'Maria';
+  FDMemTable1Ativo.AsString := 'Sim';
+  FDMemTable1Tipo.AsString := 'Opção 4';
+  FDMemTable1.Post;
 
 end;
 

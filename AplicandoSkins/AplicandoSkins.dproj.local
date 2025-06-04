@@ -10,10 +10,12 @@
     <Transaction>2024/07/19 21:18:38.000.983,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2024/08/23 19:17:52.000.749,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2025/05/08 20:31:45.000.938,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/05/09 00:27:33.000.953,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ConversorDeTextoEmVoz\fPrincipal.dfm=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2025/05/09 00:27:33.000.953,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ConversorDeTextoEmVoz\fPrincipal.pas=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/05/09 00:27:45.000.633,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ConversorDeTextoEmVoz\ConversorDeTextoEmVoz.dproj=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2025/05/21 20:36:38.000.610,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AbrindoArquivos\ConversorDeTextoEmVoz.dproj=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AbrindoArquivos\AbrindoArquivos.dproj</Transaction>
-    <Transaction>2025/05/21 23:45:45.483,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AplicandoSkins\AplicandoSkins.dproj=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AplicandoSkins\AbrindoArquivos.dproj</Transaction>
+    <Transaction>2025/05/09 00:27:33.000.953,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ConversorDeTextoEmVoz\fPrincipal.dfm</Transaction>
+    <Transaction>2025/05/09 00:27:33.000.953,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ConversorDeTextoEmVoz\fPrincipal.pas</Transaction>
+    <Transaction>2025/05/09 00:27:45.000.633,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ConversorDeTextoEmVoz\ConversorDeTextoEmVoz.dproj</Transaction>
+    <Transaction>2025/05/21 20:36:38.000.610,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AbrindoArquivos\AbrindoArquivos.dproj=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AbrindoArquivos\ConversorDeTextoEmVoz.dproj</Transaction>
+    <Transaction>2025/05/21 23:45:45.000.483,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AplicandoSkins\AbrindoArquivos.dproj=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AplicandoSkins\AplicandoSkins.dproj</Transaction>
+    <Transaction>2025/06/04 00:16:33.378,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AplicandoSkins\Unit1.pas</Transaction>
+    <Transaction>2025/06/04 00:56:36.902,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AplicandoSkins\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

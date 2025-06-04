@@ -1,0 +1,83 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.ComCtrls, ShellApi, Vcl.WindowsStore, Vcl.WinXCtrls, Vcl.WinXCalendars,
+  Vcl.TitleBarCtrls, Vcl.ControlList;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Label1: TLabel;
+    Button1: TButton;
+    procedure pnlAbrirProgramaClick(Sender: TObject);
+    procedure pnlTratarErroAoAbrirArquivoClick(Sender: TObject);
+    procedure pnlAbrirPastaClick(Sender: TObject);
+    procedure pnlAbrirArquivoClick(Sender: TObject);
+    procedure pnlAbrirSiteClick(Sender: TObject);
+  private
+    { Private declarations }
+
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+{ TfrmPrincipal }
+
+procedure TfrmPrincipal.pnlAbrirArquivoClick(Sender: TObject);
+begin
+  ShellExecute(Handle,
+               'open',
+               'chrome.exe',
+               'c:\temp\linguagem_programacao.pdf',
+               nil,
+               SW_SHOWNORMAL);
+end;
+
+procedure TfrmPrincipal.pnlAbrirPastaClick(Sender: TObject);
+begin
+  ShellExecute(Handle,
+               'open',
+               'C:\temp',
+               nil,
+               nil,
+               SW_SHOWNORMAL);
+end;
+
+procedure TfrmPrincipal.pnlAbrirProgramaClick(Sender: TObject);
+begin
+  ShellExecute(Handle, 'open', 'notepad.exe', nil, nil, SW_SHOWNORMAL);
+end;
+
+procedure TfrmPrincipal.pnlAbrirSiteClick(Sender: TObject);
+begin
+  ShellExecute(Handle,
+               'open',
+               'www.google.com',
+               nil,
+               nil,
+               SW_SHOWNORMAL);
+end;
+
+procedure TfrmPrincipal.pnlTratarErroAoAbrirArquivoClick(Sender: TObject);
+var
+  Retorno: HINST;
+begin
+  Retorno := ShellExecute(Handle, 'open', 'C:\Inexistente\arquivo.txt', nil, nil, SW_SHOWNORMAL);
+  if Retorno <= 32 then
+    ShowMessage('Erro ao abrir o arquivo.');
+
+end;
+
+end.

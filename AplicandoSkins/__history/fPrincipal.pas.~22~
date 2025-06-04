@@ -1,0 +1,46 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.ComCtrls, ShellApi, Vcl.WindowsStore, Vcl.WinXCtrls, Vcl.WinXCalendars,
+  Vcl.TitleBarCtrls, Vcl.ControlList, Data.DB, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    SearchBox1: TSearchBox;
+    ComboBox1: TComboBox;
+    DBGrid1: TDBGrid;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    Label1: TLabel;
+    Memo1: TMemo;
+    CheckBox1: TCheckBox;
+    RadioGroup1: TRadioGroup;
+    Edit1: TEdit;
+    Panel5: TPanel;
+    Button3: TButton;
+    Button1: TButton;
+    Label2: TLabel;
+  private
+    { Private declarations }
+
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+{ TfrmPrincipal }
+
+end.
