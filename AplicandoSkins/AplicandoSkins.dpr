@@ -11,6 +11,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Iceberg Classico');
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.Run;
 end.

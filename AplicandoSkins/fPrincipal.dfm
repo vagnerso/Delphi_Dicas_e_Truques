@@ -2,8 +2,8 @@ object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Aplicando Skins Na Aplica'#231#227'o'
-  ClientHeight = 662
-  ClientWidth = 1049
+  ClientHeight = 660
+  ClientWidth = 1095
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,7 +17,7 @@ object frmPrincipal: TfrmPrincipal
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1049
+    Width = 1095
     Height = 57
     Align = alTop
     Caption = 'Cadastro de Cliente'
@@ -28,16 +28,16 @@ object frmPrincipal: TfrmPrincipal
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 788
+    ExplicitWidth = 790
   end
   object Panel2: TPanel
     Left = 0
     Top = 57
-    Width = 1049
+    Width = 1095
     Height = 84
     Align = alTop
     TabOrder = 1
-    ExplicitWidth = 788
+    ExplicitWidth = 790
     object SearchBox1: TSearchBox
       Left = 16
       Top = 24
@@ -66,7 +66,7 @@ object frmPrincipal: TfrmPrincipal
     Left = 0
     Top = 141
     Width = 497
-    Height = 496
+    Height = 494
     Align = alLeft
     DataSource = DataSource1
     TabOrder = 2
@@ -75,6 +75,7 @@ object frmPrincipal: TfrmPrincipal
     TitleFont.Height = -20
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    StyleName = 'Glow'
     Columns = <
       item
         Expanded = False
@@ -97,27 +98,27 @@ object frmPrincipal: TfrmPrincipal
   end
   object Panel3: TPanel
     Left = 0
-    Top = 637
-    Width = 1049
+    Top = 635
+    Width = 1095
     Height = 25
     Align = alBottom
     TabOrder = 3
-    ExplicitTop = 360
-    ExplicitWidth = 788
+    ExplicitTop = 358
+    ExplicitWidth = 790
   end
   object Panel4: TPanel
     Left = 497
     Top = 141
-    Width = 552
-    Height = 496
+    Width = 598
+    Height = 494
     Align = alClient
     ParentBackground = False
     TabOrder = 4
-    ExplicitWidth = 291
-    ExplicitHeight = 219
+    ExplicitWidth = 293
+    ExplicitHeight = 217
     DesignSize = (
-      552
-      496)
+      598
+      494)
     object Label1: TLabel
       Left = 18
       Top = 22
@@ -135,14 +136,14 @@ object frmPrincipal: TfrmPrincipal
     object Memo1: TMemo
       Left = 18
       Top = 276
-      Width = 520
+      Width = 566
       Height = 127
       Anchors = [akLeft, akTop, akRight]
       Lines.Strings = (
         'Memo1')
       TabOrder = 0
       StyleName = 'Windows10 SlateGray'
-      ExplicitWidth = 259
+      ExplicitWidth = 261
     end
     object CheckBox1: TCheckBox
       Left = 18
@@ -153,7 +154,7 @@ object frmPrincipal: TfrmPrincipal
       TabOrder = 1
     end
     object RadioGroup1: TRadioGroup
-      Left = 281
+      Left = 327
       Top = 98
       Width = 258
       Height = 119
@@ -166,28 +167,28 @@ object frmPrincipal: TfrmPrincipal
         'Op'#231#227'o 3'
         'Op'#231#227'o 4')
       TabOrder = 2
-      ExplicitLeft = 20
+      ExplicitLeft = 22
     end
     object Edit1: TEdit
       Left = 18
       Top = 56
-      Width = 520
+      Width = 566
       Height = 36
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 3
-      ExplicitWidth = 259
+      ExplicitWidth = 261
     end
     object Panel5: TPanel
       Left = 1
-      Top = 417
-      Width = 550
+      Top = 415
+      Width = 596
       Height = 78
       Align = alBottom
       TabOrder = 4
-      ExplicitTop = 140
-      ExplicitWidth = 289
+      ExplicitTop = 138
+      ExplicitWidth = 291
       object Button3: TButton
-        Left = 299
+        Left = 345
         Top = 1
         Width = 250
         Height = 76
@@ -195,10 +196,10 @@ object frmPrincipal: TfrmPrincipal
         Caption = 'Salvar'
         TabOrder = 0
         StyleName = 'Ruby Graphite'
-        ExplicitLeft = 38
+        ExplicitLeft = 40
       end
       object Button1: TButton
-        Left = 49
+        Left = 95
         Top = 1
         Width = 250
         Height = 76
@@ -206,7 +207,6 @@ object frmPrincipal: TfrmPrincipal
         Caption = 'Cancelar'
         TabOrder = 1
         StyleName = 'Glow'
-        ExplicitLeft = -212
       end
     end
     object CalendarPicker1: TCalendarPicker
