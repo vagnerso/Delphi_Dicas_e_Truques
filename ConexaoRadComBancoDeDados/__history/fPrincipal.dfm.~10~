@@ -1,0 +1,79 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Sistema de Relat'#243'rio de Clientes'
+  ClientHeight = 572
+  ClientWidth = 794
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 15
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 117
+    Width = 794
+    Height = 435
+    Align = alClient
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 794
+    Height = 57
+    Align = alTop
+    Caption = 'Sistema de Relat'#243'rio de Clientes'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    ExplicitWidth = 788
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 57
+    Width = 794
+    Height = 60
+    Align = alTop
+    TabOrder = 2
+    ExplicitWidth = 788
+    object Button1: TButton
+      Left = 1
+      Top = 1
+      Width = 256
+      Height = 58
+      Align = alLeft
+      Caption = 'Listar Clientes'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 552
+    Width = 794
+    Height = 20
+    Align = alBottom
+    Caption = 'Vagner | Dicas de Programa'#231#227'o'
+    TabOrder = 3
+    ExplicitTop = 539
+    ExplicitWidth = 788
+  end
+end
