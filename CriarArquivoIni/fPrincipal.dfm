@@ -1,0 +1,131 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Configura'#231#245'es'
+  ClientHeight = 467
+  ClientWidth = 711
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 21
+  object pnlTitulo: TPanel
+    Left = 0
+    Top = 0
+    Width = 711
+    Height = 65
+    Align = alTop
+    Caption = 'Configura'#231#245'es'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 709
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 65
+    Width = 711
+    Height = 372
+    Align = alClient
+    TabOrder = 1
+    DesignSize = (
+      711
+      372)
+    object Label1: TLabel
+      Left = 16
+      Top = 27
+      Width = 198
+      Height = 21
+      Caption = 'Caminho do banco de dados'
+    end
+    object Label2: TLabel
+      Left = 75
+      Top = 164
+      Width = 224
+      Height = 21
+      Caption = 'Calcular pre'#231'o automaticamente'
+    end
+    object Label3: TLabel
+      Left = 16
+      Top = 91
+      Width = 207
+      Height = 21
+      Caption = 'N'#250'mero de vias de impress'#227'o'
+    end
+    object Label4: TLabel
+      Left = 16
+      Top = 203
+      Width = 255
+      Height = 21
+      Caption = 'ICMS Padr'#227'o do cadastro de produto'
+    end
+    object edtCaminhoBanco: TEdit
+      Left = 16
+      Top = 56
+      Width = 417
+      Height = 29
+      TabOrder = 0
+    end
+    object edtNumeroVias: TEdit
+      Left = 16
+      Top = 120
+      Width = 417
+      Height = 29
+      TabOrder = 1
+    end
+    object ToggleSwitch1: TToggleSwitch
+      Left = 16
+      Top = 168
+      Width = 50
+      Height = 20
+      ShowStateCaption = False
+      StateCaptions.CaptionOn = 'Ligado'
+      StateCaptions.CaptionOff = 'Desligado'
+      TabOrder = 2
+      ThumbColor = clBlack
+    end
+    object btnSalvar: TButton
+      Left = 504
+      Top = 309
+      Width = 199
+      Height = 57
+      Anchors = [akRight, akBottom]
+      Caption = 'Salvar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      OnClick = btnSalvarClick
+      ExplicitLeft = 502
+      ExplicitTop = 301
+    end
+    object edtIcmsPadrao: TEdit
+      Left = 16
+      Top = 232
+      Width = 65
+      Height = 29
+      TabOrder = 4
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 437
+    Width = 711
+    Height = 30
+    Align = alBottom
+    Caption = 'Vagner | Dicas de Programa'#231#227'o'
+    TabOrder = 2
+    ExplicitTop = 429
+    ExplicitWidth = 709
+  end
+end
