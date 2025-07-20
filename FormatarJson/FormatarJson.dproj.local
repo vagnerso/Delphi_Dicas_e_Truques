@@ -3,9 +3,9 @@
 	<Transactions>
     <Transaction>2025/06/29 11:41:50.000.621,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2025/06/29 19:21:06.000.610,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/07/14 18:38:12.110,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/07/14 18:38:55.090,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\FormatarJson\fPrincipal.pas=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/07/14 18:38:55.090,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\FormatarJson\fPrincipal.dfm=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2025/07/14 18:39:00.490,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\FormatarJson\FormatarJson.dproj=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2025/07/14 18:38:12.000.110,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/07/14 18:38:55.000.090,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\FormatarJson\fPrincipal.dfm</Transaction>
+    <Transaction>2025/07/14 18:38:55.000.090,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\FormatarJson\fPrincipal.pas</Transaction>
+    <Transaction>2025/07/14 18:39:00.000.490,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\FormatarJson\FormatarJson.dproj</Transaction>
   </Transactions>
 </BorlandProject>

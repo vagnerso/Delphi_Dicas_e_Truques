@@ -3,10 +3,9 @@ unit fPrincipal;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,
-  System.JSON, Vcl.ExtCtrls;
+  System.JSON, System.JSON.Writers, System.JSON.Types, Vcl.ExtCtrls;
 
 type
   TfrmPrincipal = class(TForm)
@@ -34,21 +33,20 @@ var
   lJSONFormatado: string;
   lArquivoTexto: TStringList;
 begin
-
   lPessoaJSON := TJSONObject.Create;
   try
     lPessoaJSON.AddPair('nome', 'Vagner Oliveira');
     lPessoaJSON.AddPair('idade', TJSONNumber.Create(40));
     lPessoaJSON.AddPair('cadastroAtivo', TJSONBool.Create(True));
 
-    // Endere√ßo da pessoa
+    // EndereÁo da pessoa
     lEnderecoJSON := TJSONObject.Create;
     lEnderecoJSON.AddPair('rua', 'Rua das Palmeiras');
-    lEnderecoJSON.AddPair('cidade', 'Camaqu√£');
+    lEnderecoJSON.AddPair('cidade', 'Camaqu„');
     lEnderecoJSON.AddPair('cep', '01234-567');
     lPessoaJSON.AddPair('endereco', lEnderecoJSON);
 
-    // Contatos da pessoa
+    // Contatos da pessoa (array)
     lContatosArray := TJSONArray.Create;
 
     lContatoJSON := TJSONObject.Create;
@@ -63,17 +61,17 @@ begin
 
     lPessoaJSON.AddPair('contatos', lContatosArray);
 
+
     lJSONFormatado := lPessoaJSON.Format(2);
-    ShowMessage(lJSONFormatado);
 
-//    lArquivoTexto := TStringList.Create;
-//    try
-//      lArquivoTexto.Text := lJSONFormatado;
-//      lArquivoTexto.SaveToFile('D:\Temp\arquivo_pessoa.json');
-//    finally
-//      lArquivoTexto.Free;
-//    end;
 
+    lArquivoTexto := TStringList.Create;
+    try
+      lArquivoTexto.Text := lJSONFormatado;
+      lArquivoTexto.SaveToFile('D:\Temp\pessoa_indentada.json');
+    finally
+      lArquivoTexto.Free;
+    end;
   finally
     lPessoaJSON.Free;
   end;
