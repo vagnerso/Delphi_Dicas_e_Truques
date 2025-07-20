@@ -1,0 +1,77 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,
+  System.JSON, System.JSON.Writers, System.JSON.Types;
+
+type
+  TfrmPrincipal = class(TForm)
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.Button1Click(Sender: TObject);
+var
+  RootObject, EnderecoObject, ContatoObj: TJSONObject;
+  ContatosArray: TJSONArray;
+  JSONString: string;
+  Lista: TStringList;
+begin
+  RootObject := TJSONObject.Create;
+  try
+    RootObject.AddPair('nome', 'Carlos Eduardo');
+    RootObject.AddPair('idade', TJSONNumber.Create(45));
+    RootObject.AddPair('ativo', TJSONBool.Create(True));
+
+    // Objeto aninhado para endereço
+    EnderecoObject := TJSONObject.Create;
+    EnderecoObject.AddPair('rua', 'Rua das Palmeiras');
+    EnderecoObject.AddPair('cidade', 'São Paulo');
+    EnderecoObject.AddPair('cep', '01234-567');
+    RootObject.AddPair('endereco', EnderecoObject);
+
+    // Array de contatos
+    ContatosArray := TJSONArray.Create;
+
+    ContatoObj := TJSONObject.Create;
+    ContatoObj.AddPair('tipo', 'email');
+    ContatoObj.AddPair('valor', 'carlos@email.com');
+    ContatosArray.AddElement(ContatoObj); // array: AddElement
+
+    ContatoObj := TJSONObject.Create;
+    ContatoObj.AddPair('tipo', 'telefone');
+    ContatoObj.AddPair('valor', '+55 11 99999-8888');
+    ContatosArray.AddElement(ContatoObj); // array: AddElement
+
+    RootObject.AddPair('contatos', ContatosArray); // adiciona array corretamente
+
+    // Gerar JSON formatado
+    JSONString := RootObject.Format(4);
+
+    Lista := TStringList.Create;
+    try
+      Lista.Text := JSONString;
+      Lista.SaveToFile('C:\Temp\json_array_indentado.json');
+    finally
+      Lista.Free;
+    end;
+  finally
+    RootObject.Free;
+  end;
+end;
+
+end.

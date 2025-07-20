@@ -3,9 +3,9 @@
 	<Transactions>
     <Transaction>2025/06/29 11:41:50.000.621,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2025/06/29 19:21:06.000.610,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/07/06 17:44:41.171,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/07/06 17:45:18.680,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\CriarArquivoIni\fPrincipal.dfm=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2025/07/06 17:45:18.680,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\CriarArquivoIni\fPrincipal.pas=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/07/06 17:45:27.787,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\CriarArquivoIni\CriarArquivoIni.dproj=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2025/07/06 17:44:41.000.171,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/07/06 17:45:18.000.680,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\CriarArquivoIni\fPrincipal.dfm</Transaction>
+    <Transaction>2025/07/06 17:45:18.000.680,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\CriarArquivoIni\fPrincipal.pas</Transaction>
+    <Transaction>2025/07/06 17:45:27.000.787,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\CriarArquivoIni\CriarArquivoIni.dproj</Transaction>
   </Transactions>
 </BorlandProject>

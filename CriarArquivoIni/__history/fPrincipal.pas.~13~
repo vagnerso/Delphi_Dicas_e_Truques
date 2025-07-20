@@ -22,11 +22,8 @@ type
     Label4: TLabel;
     edtIcmsPadrao: TEdit;
     procedure btnSalvarClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
-    procedure LerConfiguracoes;
-
   public
     { Public declarations }
   end;
@@ -70,40 +67,6 @@ begin
       ShowMessage('Erro ao tentar salvar configurações!' + sLineBreak +
       e.Message);
     end;
-
-end;
-
-procedure TfrmPrincipal.FormShow(Sender: TObject);
-begin
-  LerConfiguracoes;
-  edtCaminhoBanco.SetFocus;
-end;
-
-procedure TfrmPrincipal.LerConfiguracoes;
-var
-  lArquivoIni: TIniFile;
-begin
-
-  lArquivoIni := TIniFile.Create(ExtractFilePath(Application.ExeName) + '\config.ini');
-  try
-
-    edtCaminhoBanco.Text := lArquivoIni.ReadString('Database', 'Path', '');
-    edtNumeroVias.Text := lArquivoIni.ReadInteger('Print', 'Vias', 1).ToString;
-
-    if lArquivoIni.ReadBool('Product', 'PriceAuto', False) then
-    begin
-      ToggleSwitch1.State := TToggleSwitchState.tssOn;
-    end
-    else
-    begin
-      ToggleSwitch1.State := TToggleSwitchState.tssOff;
-    end;
-
-    edtIcmsPadrao.Text := lArquivoIni.ReadFloat('Product', 'ICMS', 0).ToString;
-
-  finally
-    lArquivoIni.Free;
-  end;
 
 end;
 
