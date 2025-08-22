@@ -1,0 +1,121 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Gerar Logs com RTTI'
+  ClientHeight = 438
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 21
+  object Label1: TLabel
+    Left = 32
+    Top = 82
+    Width = 49
+    Height = 21
+    Caption = 'Valor 1'
+  end
+  object Label2: TLabel
+    Left = 328
+    Top = 82
+    Width = 49
+    Height = 21
+    Caption = 'Valor 2'
+  end
+  object Label3: TLabel
+    Left = 32
+    Top = 161
+    Width = 133
+    Height = 21
+    Caption = 'Escolha uma op'#231#227'o'
+  end
+  object Edit1: TEdit
+    Left = 32
+    Top = 109
+    Width = 257
+    Height = 29
+    TabOrder = 0
+    Text = 'Edit1'
+  end
+  object Edit2: TEdit
+    Left = 328
+    Top = 109
+    Width = 265
+    Height = 29
+    TabOrder = 1
+    Text = 'Edit2'
+  end
+  object ComboBox1: TComboBox
+    Left = 32
+    Top = 188
+    Width = 257
+    Height = 29
+    TabOrder = 2
+    Items.Strings = (
+      'Op'#231#227'o 1'
+      'Op'#231#227'o 2'
+      'Op'#231#227'o 3'
+      '')
+  end
+  object CheckBox1: TCheckBox
+    Left = 328
+    Top = 194
+    Width = 97
+    Height = 17
+    Caption = 'Ativar'
+    TabOrder = 3
+  end
+  object btnGravarLogs: TButton
+    Left = 144
+    Top = 280
+    Width = 337
+    Height = 81
+    Caption = 'Gerar Logs'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+    OnClick = btnGravarLogsClick
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 635
+    Height = 65
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Gerar Logs com RTTI'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+    ExplicitWidth = 706
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 408
+    Width = 635
+    Height = 30
+    Align = alBottom
+    BevelOuter = bvNone
+    Caption = 'Vagner | Dicas de Programa'#231#227'o'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+    ExplicitTop = 464
+    ExplicitWidth = 706
+  end
+end

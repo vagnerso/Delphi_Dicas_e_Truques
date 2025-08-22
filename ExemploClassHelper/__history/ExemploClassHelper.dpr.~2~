@@ -1,0 +1,16 @@
+program ExemploClassHelper;
+
+uses
+  Vcl.Forms,
+  fPrincipal in 'fPrincipal.pas' {Form1},
+  uFormHelper in 'helpers\uFormHelper.pas';
+
+{$R *.res}
+
+begin
+  Application.Title := 'App exemplo de Class Helper';
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

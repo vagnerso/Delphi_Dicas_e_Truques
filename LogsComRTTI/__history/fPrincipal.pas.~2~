@@ -1,0 +1,96 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.Rtti, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    ComboBox1: TComboBox;
+    CheckBox1: TCheckBox;
+    btnGravarLogs: TButton;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    procedure btnGravarLogsClick(Sender: TObject);
+  private
+    procedure GravarLogErroRTTI(Form: TForm; E: Exception);
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+uses
+  System.TypInfo;
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnGravarLogsClick(Sender: TObject);
+var
+a, b: double;
+begin
+  a:=1;
+  b:=0;
+
+  try
+    //raise Exception.Create('Erro simulado com RTTI');
+    strtoint(Edit1.Text);
+  except
+    on E: Exception do
+      GravarLogErroRTTI(Self, E);
+  end;
+end;
+
+procedure TfrmPrincipal.GravarLogErroRTTI(Form: TForm; E: Exception);
+var
+  Contexto: TRttiContext;
+  TipoForm: TRttiType;
+  Field: TRttiField;
+  Obj: TObject;
+  Log: TStringList;
+begin
+  Log := TStringList.Create;
+  try
+    Log.Add('---------------------------------------');
+    Log.Add('Erro em: ' + Form.Name);
+    Log.Add('Classe: ' + Form.ClassName);
+    Log.Add('Data/Hora: ' + DateTimeToStr(Now));
+    Log.Add('Mensagem do Erro: ' + E.Message);
+    Log.Add('--- Valores dos componentes (via RTTI em Fields) ---');
+
+    Contexto := TRttiContext.Create;
+    TipoForm := Contexto.GetType(Form.ClassType);
+
+    for Field in TipoForm.GetFields do
+    begin
+      if Field.Visibility = mvPublished then
+      begin
+        Obj := Field.GetValue(Form).AsObject;
+        if Obj is TEdit then
+          Log.Add(Field.Name + ' = ' + TEdit(Obj).Text)
+        else if Obj is TComboBox then
+          Log.Add(Field.Name + ' = ' + TComboBox(Obj).Text)
+        else if Obj is TCheckBox then
+          Log.Add(Field.Name + ' = ' + BoolToStr(TCheckBox(Obj).Checked, True));
+      end;
+    end;
+
+    showmessage(log.Text);
+
+  finally
+    Log.Free;
+  end;
+end;
+
+end.

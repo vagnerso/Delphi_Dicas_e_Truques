@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/06/29 11:41:50.000.621,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/06/29 19:21:06.000.610,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 19:43:06.000.753,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 19:44:18.000.979,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\fPrincipal.dfm</Transaction>
+    <Transaction>2025/08/01 19:44:18.000.979,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\fPrincipal.pas</Transaction>
+    <Transaction>2025/08/01 19:44:27.000.981,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\ExemploClassHelper.dproj</Transaction>
+    <Transaction>2025/08/01 21:15:28.000.291,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 21:17:31.000.383,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\helpers\uFormHelper.pas</Transaction>
+    <Transaction>2025/08/01 21:30:30.000.890,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 21:30:44.000.849,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\fProdutos.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.dfm</Transaction>
+    <Transaction>2025/08/01 21:30:44.000.849,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\fProdutos.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 21:30:51.000.320,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 21:31:03.000.474,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\fVendas.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.dfm</Transaction>
+    <Transaction>2025/08/01 21:31:03.000.474,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\fVendas.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 21:38:39.000.974,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\helpers\uFormHelper.pas=</Transaction>
+    <Transaction>2025/08/01 21:58:24.000.028,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 21:59:53.000.897,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\uFormHelper.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 22:03:14.000.868,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\uFormHelper.pas=</Transaction>
+    <Transaction>2025/08/01 22:03:44.000.941,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 22:04:01.000.410,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\classHelpers\uFormHelper.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 22:05:02.000.145,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\classHelpers\uFormHelper.pas=</Transaction>
+    <Transaction>2025/08/01 22:10:08.000.020,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 22:10:35.000.791,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\class_helpers\uFormHelper.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/01 22:30:26.000.690,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\class_helpers\uFormHelper.pas=</Transaction>
+    <Transaction>2025/08/03 16:58:01.852,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+    <Transaction>2025/08/03 16:58:38.561,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\class_helpers\uFormHelper.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ExemploClassHelper\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

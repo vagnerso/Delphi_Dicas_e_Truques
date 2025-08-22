@@ -1,0 +1,15 @@
+unit uFormHelper;
+
+interface
+
+uses
+  Vcl.Forms;
+
+type TFormHelper = class helper for TForm
+procedure SetTitle;
+
+end;
+
+implementation
+
+end.

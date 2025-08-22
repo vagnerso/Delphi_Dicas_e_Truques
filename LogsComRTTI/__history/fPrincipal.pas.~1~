@@ -1,0 +1,75 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.Rtti, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    ComboBox1: TComboBox;
+    CheckBox1: TCheckBox;
+  private
+    procedure GravarLogErroRTTI(Form: TForm; E: Exception);
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.GravarLogErroRTTI(Form: TForm; E: Exception);
+var
+  Contexto: TRttiContext;
+  TipoForm: TRttiType;
+  Prop: TRttiProperty;
+  Valor: TValue;
+  Log: TStringList;
+begin
+  Log := TStringList.Create;
+  try
+    Log.Add('---------------------------------------');
+    Log.Add('Erro em: ' + Form.Name);
+    Log.Add('Classe: ' + Form.ClassName);
+    Log.Add('Data/Hora: ' + DateTimeToStr(Now));
+    Log.Add('Mensagem do Erro: ' + E.Message);
+    Log.Add('--- Valores dos componentes (via RTTI) ---');
+
+    Contexto := TRttiContext.Create;
+    TipoForm := Contexto.GetType(Form.ClassType);
+
+    for Prop in TipoForm.GetProperties do
+    begin
+      if Prop.IsReadable then
+      begin
+        Valor := Prop.GetValue(Form);
+
+        // Verifica se a propriedade é um componente visual que nos interessa
+        if Valor.IsObject then
+        begin
+          if Valor.AsObject is TEdit then
+            Log.Add(Prop.Name + ' = ' + TEdit(Valor.AsObject).Text)
+          else if Valor.AsObject is TComboBox then
+            Log.Add(Prop.Name + ' = ' + TComboBox(Valor.AsObject).Text)
+          else if Valor.AsObject is TCheckBox then
+            Log.Add(Prop.Name + ' = ' + BoolToStr(TCheckBox(Valor.AsObject).Checked, True));
+        end;
+      end;
+    end;
+
+    Log.SaveToFile('LogErrosRTTI.txt', TEncoding.UTF8);
+
+  finally
+    Log.Free;
+  end;
+end;
+
+end.

@@ -1,0 +1,23 @@
+unit uFormHelper;
+
+interface
+
+uses
+  Vcl.Forms;
+
+type TFormHelper = class helper for TForm
+  procedure DefinirTituloDoFormulario;
+end;
+
+implementation
+
+{ TFormHelper }
+
+procedure TFormHelper.DefinirTituloDoFormulario;
+begin
+
+  Caption := Caption + ' - ' + Application.Title + ' - Versão 1.0';
+
+end;
+
+end.

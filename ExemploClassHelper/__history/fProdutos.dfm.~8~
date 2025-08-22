@@ -1,0 +1,51 @@
+object frmProdutos: TfrmProdutos
+  Left = 0
+  Top = 0
+  Caption = 'Produtos'
+  ClientHeight = 441
+  ClientWidth = 624
+  Color = clBlack
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 624
+    Height = 65
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Produtos'
+    Color = 12319873
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+  end
+  object Memo1: TMemo
+    Left = 64
+    Top = 152
+    Width = 441
+    Height = 209
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 184
+    Top = 88
+    Width = 209
+    Height = 58
+    Caption = 'Button1'
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+end

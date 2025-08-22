@@ -1,0 +1,11 @@
+unit uFormHelper;
+
+interface
+
+type TFormHelper = class helper for TForm
+
+end;
+
+implementation
+
+end.
