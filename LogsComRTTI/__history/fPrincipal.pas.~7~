@@ -1,0 +1,105 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, System.Rtti;
+
+type
+  TPessoa = class
+  private
+    FNome: string;
+    FIdade: Integer;
+  public
+    property Nome: string read FNome write FNome;
+    property Idade: Integer read FIdade write FIdade;
+  end;
+
+type
+  TfrmPrincipal = class(TForm)
+    edtNome: TEdit;
+    edtIdade: TEdit;
+    btnSalvar: TButton;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    mmoLog: TMemo;
+    procedure btnSalvarClick(Sender: TObject);
+
+  private
+    { Private declarations }
+    procedure GravarLogErro(Obj: TObject; const MsgErro: string);
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+uses
+  System.TypInfo;
+
+{$R *.dfm}
+
+{ TfrmPrincipal }
+
+
+procedure TfrmPrincipal.btnSalvarClick(Sender: TObject);
+var
+  lPessoa: TPessoa;
+begin
+  lPessoa := TPessoa.Create;
+
+  try
+    lPessoa.Nome := edtNome.Text;
+    lPessoa.Idade := StrToInt(edtIdade.Text);
+
+    try
+      raise Exception.Create('Falha ao processar cadastro!');
+    except
+      on E: Exception do
+        GravarLogErro(lPessoa, E.Message);
+    end;
+
+  finally
+    lPessoa.Free;
+  end;
+end;
+
+
+procedure TfrmPrincipal.GravarLogErro(Obj: TObject; const MsgErro: string);
+var
+  Contexto: TRttiContext;
+  Tipo: TRttiType;
+  Prop: TRttiProperty;
+  Log: TStringList;
+begin
+  Log := TStringList.Create;
+  try
+    Log.Add('Erro: ' + MsgErro);
+    Log.Add('Classe: ' + Obj.ClassName);
+    Log.Add('Data/Hora: ' + DateTimeToStr(Now));
+    Log.Add('--- Propriedades ---');
+
+    Tipo := Contexto.GetType(Obj.ClassType);
+
+    for Prop in Tipo.GetProperties do
+    begin
+      if (Prop.Visibility = mvPublic) and (Prop.IsReadable) then
+      begin
+        Log.Add(Prop.Name + ' = ' + Prop.GetValue(Obj).ToString);
+      end;
+    end;
+
+    mmoLog.Text := log.Text;
+  finally
+    Log.Free;
+  end;
+end;
+
+end.

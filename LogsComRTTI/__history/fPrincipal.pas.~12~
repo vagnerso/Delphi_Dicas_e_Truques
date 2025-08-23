@@ -4,16 +4,18 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, System.Rtti;
 
 type
   TPessoa = class
   private
     FNome: string;
     FIdade: Integer;
+    FSaldo: Currency;
   public
     property Nome: string read FNome write FNome;
     property Idade: Integer read FIdade write FIdade;
+    property Saldo: Currency read FSaldo write FSaldo;
   end;
 
 type
@@ -30,6 +32,7 @@ type
 
   private
     { Private declarations }
+    procedure GravarLogErro(Obj: TObject; const MsgErro: string);
 
   public
     { Public declarations }

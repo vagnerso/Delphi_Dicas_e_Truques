@@ -10,7 +10,6 @@ object frmPrincipal: TfrmPrincipal
   Font.Height = -16
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Position = poScreenCenter
   TextHeight = 21
   object Label1: TLabel
     Left = 32
@@ -53,7 +52,6 @@ object frmPrincipal: TfrmPrincipal
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
-    OnClick = btnSalvarClick
   end
   object Panel1: TPanel
     Left = 0

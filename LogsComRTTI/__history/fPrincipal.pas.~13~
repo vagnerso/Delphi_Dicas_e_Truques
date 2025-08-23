@@ -11,9 +11,11 @@ type
   private
     FNome: string;
     FIdade: Integer;
+    FSaldo: Currency;
   public
     property Nome: string read FNome write FNome;
     property Idade: Integer read FIdade write FIdade;
+    property Saldo: Currency read FSaldo write FSaldo;
   end;
 
 type

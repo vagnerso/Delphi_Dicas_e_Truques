@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.Rtti, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, System.Rtti;
 
 type
   TfrmPrincipal = class(TForm)
@@ -18,10 +18,18 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    Label4: TLabel;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Label5: TLabel;
+    Label6: TLabel;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    Label7: TLabel;
     procedure btnGravarLogsClick(Sender: TObject);
   private
-    procedure GravarLogErroRTTI(Form: TForm; E: Exception);
     { Private declarations }
+    procedure GravarLogErro(Form: TForm; Exception: Exception);
   public
     { Public declarations }
   end;
@@ -36,61 +44,67 @@ uses
 
 {$R *.dfm}
 
+{ TfrmPrincipal }
+
 procedure TfrmPrincipal.btnGravarLogsClick(Sender: TObject);
-var
-a, b: double;
 begin
-  a:=1;
-  b:=0;
 
   try
-    //raise Exception.Create('Erro simulado com RTTI');
-    strtoint(Edit1.Text);
-  except
-    on E: Exception do
-      GravarLogErroRTTI(Self, E);
+    StrToInt(edit1.Text);
+  except on E: Exception do
+    GravarLogErro(Self, E);
   end;
+
 end;
 
-procedure TfrmPrincipal.GravarLogErroRTTI(Form: TForm; E: Exception);
+procedure TfrmPrincipal.GravarLogErro(Form: TForm; Exception: Exception);
 var
   Contexto: TRttiContext;
-  TipoForm: TRttiType;
+  Tipo: TRttiType;
   Field: TRttiField;
   Obj: TObject;
   Log: TStringList;
 begin
+
   Log := TStringList.Create;
   try
-    Log.Add('---------------------------------------');
+
+    Log.Add('--------------------------------------');
     Log.Add('Erro em: ' + Form.Name);
     Log.Add('Classe: ' + Form.ClassName);
     Log.Add('Data/Hora: ' + DateTimeToStr(Now));
-    Log.Add('Mensagem do Erro: ' + E.Message);
+    Log.Add('Mensagem de erro: ' + Exception.Message);
+    Log.Add('--------------------------------------');
     Log.Add('--- Valores dos componentes (via RTTI em Fields) ---');
 
     Contexto := TRttiContext.Create;
-    TipoForm := Contexto.GetType(Form.ClassType);
+    Tipo := Contexto.GetType(Form.ClassType);
 
-    for Field in TipoForm.GetFields do
+    for Field in Tipo.GetFields do
     begin
+
       if Field.Visibility = mvPublished then
       begin
+
         Obj := Field.GetValue(Form).AsObject;
-        if Obj is TEdit then
-          Log.Add(Field.Name + ' = ' + TEdit(Obj).Text)
-        else if Obj is TComboBox then
-          Log.Add(Field.Name + ' = ' + TComboBox(Obj).Text)
-        else if Obj is TCheckBox then
-          Log.Add(Field.Name + ' = ' + BoolToStr(TCheckBox(Obj).Checked, True));
+
+        if obj is TEdit then
+          Log.Add(field.Name + ' = ' + TEdit(Obj).Text)
+        else if obj is TComboBox then
+          Log.Add(field.Name + ' = ' + TComboBox(Obj).Text)
+        else if obj is TCheckBox then
+          Log.Add(field.Name + ' = ' + BoolToStr(TCheckBox(obj).Checked, True));
+
       end;
+
     end;
 
-    showmessage(log.Text);
+    ShowMessage(log.Text);
 
   finally
     Log.Free;
   end;
+
 end;
 
 end.
