@@ -1,0 +1,58 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TPessoa = class
+  private
+    FNome: string;
+    FIdade: Integer;
+  public
+    property Nome: string read FNome write FNome;
+    property Idade: Integer read FIdade write FIdade;
+  end;
+
+type
+  TfrmPrincipal = class(TForm)
+    edtNome: TEdit;
+    edtIdade: TEdit;
+    btnSalvar: TButton;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    mmoLog: TMemo;
+    procedure btnSalvarClick(Sender: TObject);
+
+  private
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+uses
+  System.TypInfo;
+
+{$R *.dfm}
+
+{ TfrmPrincipal }
+
+
+procedure TfrmPrincipal.btnSalvarClick(Sender: TObject);
+begin
+
+end;
+
+{ TPessoa }
+
+end.
