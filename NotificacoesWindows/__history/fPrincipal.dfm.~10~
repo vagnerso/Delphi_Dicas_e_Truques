@@ -1,0 +1,81 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'frmPrincipal'
+  ClientHeight = 454
+  ClientWidth = 552
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -19
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  StyleName = 'Ruby Graphite'
+  TextHeight = 25
+  object Label1: TLabel
+    Left = 24
+    Top = 120
+    Width = 302
+    Height = 25
+    Caption = 'Informe a mensagem da notifica'#231#227'o'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 552
+    Height = 89
+    Align = alTop
+    Caption = 'App de notifica'#231#245'es Windows'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 572
+  end
+  object btnNotificacoes: TButton
+    Left = 24
+    Top = 216
+    Width = 505
+    Height = 89
+    Caption = 'Criar notifica'#231#227'o'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 418
+    Width = 552
+    Height = 36
+    Align = alBottom
+    Caption = 'Vagner | Dicas de Programa'#231#227'o'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    ExplicitTop = 410
+    ExplicitWidth = 572
+  end
+  object edtMensagem: TEdit
+    Left = 24
+    Top = 152
+    Width = 505
+    Height = 33
+    TabOrder = 3
+  end
+  object NotificationCenter1: TNotificationCenter
+    Left = 248
+    Top = 336
+  end
+end

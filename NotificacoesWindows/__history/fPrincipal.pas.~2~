@@ -1,0 +1,57 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
+  System.Notification;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    btnNotificacoes: TButton;
+    Panel2: TPanel;
+    NotificationCenter1: TNotificationCenter;
+    edtMensagem: TEdit;
+    Label1: TLabel;
+    procedure btnNotificacoesClick(Sender: TObject);
+    procedure NotificationCenter1ReceiveLocalNotification(Sender: TObject;
+      ANotification: TNotification);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnNotificacoesClick(Sender: TObject);
+var
+  Notification: TNotification;
+begin
+  Notification := NotificationCenter1.CreateNotification;
+  try
+    Notification.Name := 'NotificacaoTeste';
+    Notification.Title := Application.Title;
+    Notification.AlertBody := 'Se você está vendo isso, o Delphi conseguiu enviar o toast!';
+    Notification.EnableSound := True;
+    NotificationCenter1.PresentNotification(Notification);
+  finally
+    Notification.Free;
+  end;
+
+end;
+
+procedure TfrmPrincipal.NotificationCenter1ReceiveLocalNotification(Sender: TObject;
+  ANotification: TNotification);
+begin
+  ShowMessage('Usuário clicou na notificação: ' + ANotification.Title);
+end;
+
+end.
