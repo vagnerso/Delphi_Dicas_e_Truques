@@ -1,0 +1,14 @@
+unit uConfiguracoesGlobais;
+
+interface
+
+type
+  TConfiguracoesGlobais = class
+    private
+
+    public
+  end;
+
+implementation
+
+end.

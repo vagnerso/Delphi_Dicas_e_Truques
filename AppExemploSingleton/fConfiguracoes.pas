@@ -1,0 +1,111 @@
+unit fConfiguracoes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.WinXCtrls,
+  Vcl.StdCtrls, IniFiles;
+
+type
+  TfrmConfiguracoes = class(TForm)
+    pnlTitulo: TPanel;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    edtCaminhoBanco: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    edtNumeroVias: TEdit;
+    ToggleSwitch1: TToggleSwitch;
+    Label3: TLabel;
+    btnSalvar: TButton;
+    Label4: TLabel;
+    edtIcmsPadrao: TEdit;
+    procedure btnSalvarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+    procedure LerConfiguracoes;
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmConfiguracoes: TfrmConfiguracoes;
+
+implementation
+
+uses
+  uAppFunctions, uConfiguracoesGlobais;
+
+{$R *.dfm}
+
+procedure TfrmConfiguracoes.btnSalvarClick(Sender: TObject);
+var
+  lIniFile: TIniFile;
+begin
+
+  try
+
+    lIniFile := TIniFile.Create(ExtractFilePath(Application.ExeName) + '\config.ini');
+    try
+
+      lIniFile.WriteString('Database', 'Path', edtCaminhoBanco.Text);
+      lIniFile.WriteInteger('Print', 'Vias', StrToIntDef(edtNumeroVias.Text, 0));
+
+      if ToggleSwitch1.State = TToggleSwitchState.tssOn then
+      begin
+        lIniFile.WriteBool('Product', 'PriceAuto', True);
+      end
+      else
+      begin
+        lIniFile.WriteBool('Product', 'PriceAuto', False);
+      end;
+
+      lIniFile.WriteFloat('Product', 'ICMS', StrToFloatDef(edtIcmsPadrao.Text, 0));
+
+    finally
+      lIniFile.Free;
+    end;
+
+    TConfiguracoesGlobais.Instance.CarregarDeArquivo(TAppFunctions.GetIniPath);
+    ShowMessage('Configurações salvas com sucesso!');
+    Close;
+
+  except on E: Exception do
+    ShowMessage('Erro ao tentar salvar configurações!' + sLineBreak +
+    e.Message);
+  end;
+
+end;
+
+procedure TfrmConfiguracoes.FormShow(Sender: TObject);
+begin
+  LerConfiguracoes;
+  edtCaminhoBanco.SetFocus;
+end;
+
+procedure TfrmConfiguracoes.LerConfiguracoes;
+
+begin
+
+  TConfiguracoesGlobais.Instance.CarregarDeArquivo(TAppFunctions.GetIniPath);
+
+  edtCaminhoBanco.Text := TConfiguracoesGlobais.Instance.Database;
+  edtNumeroVias.Text := TConfiguracoesGlobais.Instance.ViasImpressao.ToString;
+
+  if TConfiguracoesGlobais.Instance.PrecoAutomatico then
+  begin
+    ToggleSwitch1.State := TToggleSwitchState.tssOn;
+  end
+  else
+  begin
+    ToggleSwitch1.State := TToggleSwitchState.tssOff;
+  end;
+
+  edtIcmsPadrao.Text := TConfiguracoesGlobais.Instance.ICMS.ToString;
+
+end;
+
+end.

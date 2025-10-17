@@ -1,0 +1,21 @@
+unit uAppFunctions;
+
+interface
+
+type TAppFunctions = class
+  private
+
+  public
+  class function GetIniPath: string;
+end;
+
+implementation
+
+{ TAppFunctions }
+
+class function TAppFunctions.GetIniPath: string;
+begin
+  Result
+end;
+
+end.

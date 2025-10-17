@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/06/29 11:41:50.000.621,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/06/29 19:21:06.000.610,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/07/06 17:44:41.000.171,=C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/07/06 17:45:18.000.680,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\CriarArquivoIni\fPrincipal.pas</Transaction>
+    <Transaction>2025/07/06 17:45:18.000.680,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\CriarArquivoIni\fPrincipal.dfm</Transaction>
+    <Transaction>2025/07/06 17:45:27.000.787,C:\Users\tara_\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\CriarArquivoIni\CriarArquivoIni.dproj</Transaction>
+    <Transaction>2025/10/14 20:32:36.000.319,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/14 20:32:57.000.543,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\Unit1.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\uConfiguracoesGlobais.pas</Transaction>
+    <Transaction>2025/10/15 08:17:33.000.408,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\fConfiguracoes.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\fPrincipal.dfm</Transaction>
+    <Transaction>2025/10/15 08:17:33.000.408,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\fConfiguracoes.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\fPrincipal.pas</Transaction>
+    <Transaction>2025/10/15 08:17:45.000.480,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/15 08:18:22.000.090,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\fPrincipal.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/15 08:18:22.000.090,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\fPrincipal.dfm=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\Unit1.dfm</Transaction>
+    <Transaction>2025/10/15 20:41:51.000.905,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/15 20:43:00.000.109,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\uAppInfo.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/16 19:57:34.000.995,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/16 19:58:33.000.713,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\Unit1.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\uAppConstants.pas</Transaction>
+    <Transaction>2025/10/16 19:59:21.000.088,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\CriarArquivoIni.dproj=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\AppExemplo.dproj</Transaction>
+    <Transaction>2025/10/16 19:59:47.000.775,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\AppExemplo.dproj=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\ClasseSingleton\AppExemploSingleton.dproj</Transaction>
+    <Transaction>2025/10/16 20:03:50.000.088,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/16 20:05:09.000.791,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\uAppFunctions.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/17 19:16:53.000.205,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\uConfiguracoesGlobais.pas=</Transaction>
+    <Transaction>2025/10/17 19:30:33.000.516,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/17 19:31:25.000.582,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\uConfiguracoesGlobais.pas</Transaction>
+    <Transaction>2025/10/17 19:33:08.000.280,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\uConfiguracoesGlobais.pas=</Transaction>
+    <Transaction>2025/10/17 19:38:34.000.179,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/17 19:38:47.000.061,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\uConfiguracoesGlobais.pas</Transaction>
+    <Transaction>2025/10/17 19:46:43.000.736,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\uConfiguracoesGlobais.pas=</Transaction>
+    <Transaction>2025/10/17 19:50:38.000.002,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/17 19:56:05.000.733,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/17 19:56:43.000.999,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\uConfiguracoesGlobais.pas=</Transaction>
+    <Transaction>2025/10/17 19:59:03.443,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/17 19:59:15.820,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\uConfiguracoesGlobais.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/17 20:07:28.751,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\uConfiguracoesGlobais.pas=</Transaction>
+    <Transaction>2025/10/17 20:11:07.134,=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas</Transaction>
+    <Transaction>2025/10/17 20:11:23.596,D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\uConfiguracoesGlobais.pas=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\AppExemploSingleton\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

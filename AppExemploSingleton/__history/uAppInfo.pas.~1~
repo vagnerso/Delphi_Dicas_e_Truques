@@ -1,0 +1,20 @@
+unit uAppInfo;
+
+interface
+
+  {---------------------------------------------
+   Informações básicas do aplicativo
+  ---------------------------------------------}
+type
+  TAppInfo = class
+  private
+    FNome: string;
+    FVersao: string;
+  public
+    property Nome: string read FNome write FNome;
+    property Versao: string read FVersao write FVersao;
+  end;
+
+implementation
+
+end.

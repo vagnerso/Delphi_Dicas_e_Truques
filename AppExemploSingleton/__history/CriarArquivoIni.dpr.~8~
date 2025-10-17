@@ -1,0 +1,20 @@
+program CriarArquivoIni;
+
+uses
+  Vcl.Forms,
+  fConfiguracoes in 'fConfiguracoes.pas' {frmConfiguracoes},
+  Vcl.Themes,
+  Vcl.Styles,
+  uConfiguracoesGlobais in 'uConfiguracoesGlobais.pas',
+  fPrincipal in 'fPrincipal.pas' {frmPrincipal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Cyan Dusk');
+  Application.CreateForm(TfrmConfiguracoes, frmConfiguracoes);
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.Run;
+end.

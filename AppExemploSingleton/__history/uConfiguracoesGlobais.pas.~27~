@@ -1,0 +1,101 @@
+unit uConfiguracoesGlobais;
+
+interface
+
+uses
+  uAppInfo;
+
+type
+
+  TConfiguracoesGlobais = class
+    private
+    FViasImpressao: Integer;
+    FICMS: Currency;
+    FPrecoAutomatico: Boolean;
+    FDatabase: string;
+    FAppInfo: TAppInfo;
+
+    constructor Create;
+
+    class var FInstance: TConfiguracoesGlobais;
+
+    public
+
+    destructor Destroy; override;
+
+    class property Instance: TConfiguracoesGlobais read FInstance;
+
+    property Database: string read FDatabase write FDatabase;
+    property ViasImpressao: Integer read FViasImpressao write FViasImpressao;
+    property PrecoAutomatico: Boolean read FPrecoAutomatico write FPrecoAutomatico;
+    property ICMS: Currency read FICMS write FICMS;
+    property AppInfo: TAppInfo read FAppInfo write FAppInfo;
+
+    procedure CarregarDeArquivo(const AFileName: string);
+    function Print: String;
+
+  end;
+
+implementation
+
+uses
+  System.IniFiles, System.SysUtils;
+
+{ TConfiguracoesGlobais }
+
+constructor TConfiguracoesGlobais.Create;
+begin
+  FAppInfo := TAppInfo.Create;
+
+end;
+
+destructor TConfiguracoesGlobais.Destroy;
+begin
+  FAppInfo.Free;
+  inherited;
+end;
+
+procedure TConfiguracoesGlobais.CarregarDeArquivo(const AFileName: string);
+var
+  Ini: TIniFile;
+begin
+  if not FileExists(AFileName) then
+    Exit;
+
+  Ini := TIniFile.Create(AFileName);
+  try
+    FDatabase := Ini.ReadString('Database', 'Path', FDatabase);
+    FViasImpressao := Ini.ReadInteger('Print', 'Vias', FViasImpressao);
+    FPrecoAutomatico := Ini.ReadBool('Product', 'PriceAuto', FPrecoAutomatico);
+    FICMS := Ini.ReadFloat('Product', 'ICMS', FICMS);
+  finally
+    Ini.Free;
+  end;
+end;
+
+function TConfiguracoesGlobais.Print: String;
+begin
+  Result :=
+  'Nome do app: ' + FAppInfo.Nome + sLineBreak +
+  'Versão do app: ' + FAppInfo.Versao + sLineBreak +
+  'Database path: ' + FDatabase + sLineBreak +
+  'Vias impressão: ' + FViasImpressao.ToString + sLineBreak +
+  'Preço automático: ' + BoolToStr(FPrecoAutomatico, True) + sLineBreak +
+  'ICMS padrão: ' + FICMS.ToString + sLineBreak;
+end;
+
+initialization
+
+  if not Assigned(TConfiguracoesGlobais.FInstance)  then
+  begin
+    TConfiguracoesGlobais.FInstance := TConfiguracoesGlobais.Create;
+  end;
+
+finalization
+
+  if Assigned(TConfiguracoesGlobais.FInstance)  then
+  begin
+    //TConfiguracoesGlobais.FInstance.Free;
+  end;
+
+end.

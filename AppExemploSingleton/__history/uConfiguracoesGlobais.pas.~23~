@@ -1,0 +1,47 @@
+unit uConfiguracoesGlobais;
+
+interface
+
+uses
+  uAppInfo;
+
+type
+
+  TConfiguracoesGlobais = class
+    private
+    FViasImpressao: Integer;
+    FICMS: Currency;
+    FPrecoAutomatico: Boolean;
+    FDatabase: string;
+    FAppInfo: TAppInfo;
+
+    public
+
+    destructor Destroy; override;
+
+    property Database: string read FDatabase write FDatabase;
+    property ViasImpressao: Integer read FViasImpressao write FViasImpressao;
+    property PrecoAutomatico: Boolean read FPrecoAutomatico write FPrecoAutomatico;
+    property ICMS: Currency read FICMS write FICMS;
+    property AppInfo: TAppInfo read FAppInfo write FAppInfo;
+    constructor Create;
+
+  end;
+
+implementation
+
+{ TConfiguracoesGlobais }
+
+constructor TConfiguracoesGlobais.Create;
+begin
+  FAppInfo := TAppInfo.Create;
+
+end;
+
+destructor TConfiguracoesGlobais.Destroy;
+begin
+  FAppInfo.Free;
+  inherited;
+end;
+
+end.
