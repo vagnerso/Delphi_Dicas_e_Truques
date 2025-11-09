@@ -1,0 +1,67 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 576
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Panel1: TPanel
+    Align = Top
+    Size.Width = 576.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Label2: TLabel
+      Align = Center
+      Text = 'App Firemonkey'
+      TabOrder = 1
+    end
+  end
+  object Expander1: TExpander
+    Align = Top
+    Position.Y = 49.000000000000000000
+    ShowCheck = False
+    Size.Width = 576.000000000000000000
+    Size.Height = 168.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    ContentSize = '143'
+    object Button1: TButton
+      Position.X = 416.000000000000000000
+      Position.Y = 96.000000000000000000
+      Size.Width = 137.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Confirmar'
+      TextSettings.Trimming = None
+    end
+    object CalloutPanel1: TCalloutPanel
+      Padding.Top = 11.000000000000000000
+      Position.X = 416.000000000000000000
+      Position.Y = -17.000000000000000000
+      Size.Width = 137.000000000000000000
+      Size.Height = 105.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      CalloutWidth = 23.000000000000000000
+      CalloutLength = 11.000000000000000000
+      object Label1: TLabel
+        Position.X = 4.000000000000000000
+        Position.Y = 24.000000000000000000
+        Text = 'Texto informativo'
+        TabOrder = 1
+      end
+    end
+  end
+  object Switch1: TSwitch
+    IsChecked = False
+    Position.X = 8.000000000000000000
+    Position.Y = 225.000000000000000000
+    TabOrder = 3
+  end
+end

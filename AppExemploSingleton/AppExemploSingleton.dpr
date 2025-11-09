@@ -9,7 +9,8 @@ uses
   uAppInfo in 'uAppInfo.pas',
   uAppConstants in 'uAppConstants.pas',
   uAppFunctions in 'uAppFunctions.pas',
-  uConfiguracoesGlobais in 'uConfiguracoesGlobais.pas';
+  uConfiguracoesGlobais in 'uConfiguracoesGlobais.pas',
+  dExemplo in 'dExemplo.pas' {dtmExemplo: TDataModule};
 
 {$R *.res}
 
@@ -21,5 +22,6 @@ begin
   TStyleManager.TrySetStyle('Cyan Dusk');
 
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TdtmExemplo, dtmExemplo);
   Application.Run;
 end.

@@ -10,8 +10,10 @@ type
   TfrmPrincipal = class(TForm)
     btnConfiguracoes: TButton;
     btnCadastroProdutos: TButton;
+    Button1: TButton;
     procedure btnConfiguracoesClick(Sender: TObject);
     procedure btnCadastroProdutosClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -24,7 +26,7 @@ var
 implementation
 
 uses
-  fConfiguracoes, uConfiguracoesGlobais;
+  fConfiguracoes, uConfiguracoesGlobais, dExemplo;
 
 {$R *.dfm}
 
@@ -45,6 +47,18 @@ begin
     lFormulario.Free;
   end;
 
+end;
+
+procedure TfrmPrincipal.Button1Click(Sender: TObject);
+var
+  lDtmExemplo: TDtmExemplo;
+begin
+  lDtmExemplo := TdtmExemplo.Create(nil, 'Vagner');
+  try
+
+  finally
+    lDtmExemplo.Free;
+  end;
 end;
 
 end.

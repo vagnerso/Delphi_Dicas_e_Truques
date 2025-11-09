@@ -1,0 +1,190 @@
+object frmProdutos: TfrmProdutos
+  Left = 0
+  Top = 0
+  Caption = 'Produtos'
+  ClientHeight = 541
+  ClientWidth = 910
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 21
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 910
+    Height = 57
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Cadastro de Produtos'
+    Color = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 758
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 504
+    Width = 910
+    Height = 37
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 1
+    ExplicitWidth = 758
+  end
+  object SearchBox1: TSearchBox
+    Left = 0
+    Top = 57
+    Width = 910
+    Height = 29
+    Align = alTop
+    TabOrder = 2
+    TextHint = 'Pesquisar produtos'
+    ExplicitLeft = 8
+    ExplicitTop = 8
+    ExplicitWidth = 745
+  end
+  object FlowPanel1: TFlowPanel
+    Left = 0
+    Top = 86
+    Width = 910
+    Height = 147
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 14610677
+    ParentBackground = False
+    TabOrder = 3
+    ExplicitWidth = 758
+    object Panel3: TPanel
+      Left = 0
+      Top = 0
+      Width = 393
+      Height = 73
+      BevelOuter = bvNone
+      Color = 14610677
+      ParentBackground = False
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 8
+        Top = 6
+        Width = 43
+        Height = 21
+        Caption = 'Nome'
+      end
+      object Edit1: TEdit
+        Left = 8
+        Top = 33
+        Width = 361
+        Height = 29
+        TabOrder = 0
+      end
+    end
+    object Panel4: TPanel
+      Left = 393
+      Top = 0
+      Width = 393
+      Height = 73
+      BevelOuter = bvNone
+      Color = 14610677
+      ParentBackground = False
+      TabOrder = 1
+      object Label2: TLabel
+        Left = 8
+        Top = 6
+        Width = 39
+        Height = 21
+        Caption = 'Pre'#231'o'
+      end
+      object Edit2: TEdit
+        Left = 8
+        Top = 33
+        Width = 361
+        Height = 29
+        TabOrder = 0
+      end
+    end
+    object Panel5: TPanel
+      Left = 0
+      Top = 73
+      Width = 257
+      Height = 56
+      BevelOuter = bvNone
+      Color = 14610677
+      ParentBackground = False
+      TabOrder = 2
+      object ToggleSwitch1: TToggleSwitch
+        Left = 8
+        Top = 6
+        Width = 217
+        Height = 23
+        StateCaptions.CaptionOn = 'Controla estoque'
+        StateCaptions.CaptionOff = 'N'#227'o controla estoque'
+        TabOrder = 0
+      end
+    end
+    object Panel6: TPanel
+      Left = 257
+      Top = 73
+      Width = 393
+      Height = 73
+      BevelOuter = bvNone
+      Color = 14610677
+      ParentBackground = False
+      TabOrder = 3
+      object Label3: TLabel
+        Left = 8
+        Top = 6
+        Width = 115
+        Height = 21
+        Caption = 'Data de validade'
+      end
+      object CalendarPicker1: TCalendarPicker
+        Left = 6
+        Top = 36
+        Width = 307
+        Height = 32
+        CalendarHeaderInfo.DaysOfWeekFont.Charset = DEFAULT_CHARSET
+        CalendarHeaderInfo.DaysOfWeekFont.Color = clWindowText
+        CalendarHeaderInfo.DaysOfWeekFont.Height = -17
+        CalendarHeaderInfo.DaysOfWeekFont.Name = 'Segoe UI'
+        CalendarHeaderInfo.DaysOfWeekFont.Style = []
+        CalendarHeaderInfo.Font.Charset = DEFAULT_CHARSET
+        CalendarHeaderInfo.Font.Color = clWindowText
+        CalendarHeaderInfo.Font.Height = -25
+        CalendarHeaderInfo.Font.Name = 'Segoe UI'
+        CalendarHeaderInfo.Font.Style = []
+        Color = clWindow
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGray
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        TextHint = 'Selecione a data de validade'
+      end
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 233
+    Width = 910
+    Height = 271
+    Align = alClient
+    BorderStyle = bsNone
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -16
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
+end

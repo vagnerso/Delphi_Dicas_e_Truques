@@ -1,0 +1,69 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ControlList, Vcl.ExtCtrls,
+  Vcl.WinXCtrls, Vcl.StdCtrls, Vcl.VirtualImage, System.Skia, Vcl.Skia,
+  Vcl.BaseImageCollection, Vcl.ImageCollection;
+
+type
+  TfrmPrincipal = class(TForm)
+    SplitView1: TSplitView;
+    ImageCollection1: TImageCollection;
+    SkSvg5: TSkSvg;
+    SkLabel1: TSkLabel;
+    SkSvg6: TSkSvg;
+    SkSvg7: TSkSvg;
+    SkSvg8: TSkSvg;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    FlowPanel1: TFlowPanel;
+    SkSvg1: TSkSvg;
+    SkSvg2: TSkSvg;
+    SkSvg4: TSkSvg;
+    SkSvg3: TSkSvg;
+    procedure SkSvg5Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure SkSvg2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+uses
+  fProdutos;
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  SplitView1.Opened := False;
+end;
+
+procedure TfrmPrincipal.SkSvg2Click(Sender: TObject);
+var
+  lFormulario: TfrmProdutos;
+begin
+  lFormulario := TfrmProdutos.Create(nil);
+  try
+    lFormulario.ShowModal;
+  finally
+    lFormulario.Free;
+  end;
+end;
+
+procedure TfrmPrincipal.SkSvg5Click(Sender: TObject);
+begin
+  SplitView1.Opened := not SplitView1.Opened;
+end;
+
+end.

@@ -1,0 +1,38 @@
+unit fProdutos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Data.DB, Vcl.WinXCtrls,
+  Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfrmProdutos = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    SearchBox1: TSearchBox;
+    FlowPanel1: TFlowPanel;
+    DBGrid1: TDBGrid;
+    Panel3: TPanel;
+    Edit1: TEdit;
+    Label1: TLabel;
+    Panel4: TPanel;
+    Label2: TLabel;
+    Edit2: TEdit;
+    Panel5: TPanel;
+    ToggleSwitch1: TToggleSwitch;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmProdutos: TfrmProdutos;
+
+implementation
+
+{$R *.dfm}
+
+end.

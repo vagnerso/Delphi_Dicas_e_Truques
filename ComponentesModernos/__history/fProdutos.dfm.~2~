@@ -1,0 +1,47 @@
+object frmProdutos: TfrmProdutos
+  Left = 0
+  Top = 0
+  Caption = 'Produtos'
+  ClientHeight = 541
+  ClientWidth = 758
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 758
+    Height = 57
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Cadastro de Produtos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object FlowPanel1: TFlowPanel
+    Left = 296
+    Top = 272
+    Width = 185
+    Height = 41
+    Caption = 'FlowPanel1'
+    TabOrder = 1
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 504
+    Width = 758
+    Height = 37
+    Align = alBottom
+    Caption = 'Panel2'
+    TabOrder = 2
+  end
+end

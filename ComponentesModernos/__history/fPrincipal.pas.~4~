@@ -1,0 +1,45 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ControlList, Vcl.ExtCtrls,
+  Vcl.WinXCtrls, Vcl.StdCtrls, Vcl.VirtualImage, System.Skia, Vcl.Skia,
+  Vcl.BaseImageCollection, Vcl.ImageCollection;
+
+type
+  TfrmPrincipal = class(TForm)
+    SplitView1: TSplitView;
+    Panel1: TPanel;
+    ControlList1: TControlList;
+    Label1: TLabel;
+    ImageCollection1: TImageCollection;
+    SkSvg1: TSkSvg;
+    SkSvg2: TSkSvg;
+    procedure ControlList1ItemClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.ControlList1ItemClick(Sender: TObject);
+begin
+  case ControlList1.ItemIndex of
+  0: showmessage('Item 1');
+  1: showmessage('Item 2');
+  2: showmessage('Item 3');
+  3: showmessage('Item 4');
+  4: showmessage('Item 5');
+  end;
+end;
+
+end.

@@ -1,0 +1,64 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    btnConfiguracoes: TButton;
+    btnCadastroProdutos: TButton;
+    Button1: TButton;
+    procedure btnConfiguracoesClick(Sender: TObject);
+    procedure btnCadastroProdutosClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+uses
+  fConfiguracoes, uConfiguracoesGlobais, dExemplo;
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnCadastroProdutosClick(Sender: TObject);
+begin
+  Showmessage(TConfiguracoesGlobais.Instance.Print);
+end;
+
+procedure TfrmPrincipal.btnConfiguracoesClick(Sender: TObject);
+var
+  lFormulario: TfrmConfiguracoes;
+begin
+
+  lFormulario := TfrmConfiguracoes.Create(nil);
+  try
+    lFormulario.ShowModal;
+  finally
+    lFormulario.Free;
+  end;
+
+end;
+
+procedure TfrmPrincipal.Button1Click(Sender: TObject);
+var
+  lDtmExemplo: TDtmExemplo;
+begin
+  lDtmExemplo := TdtmExemplo.Create(Self, 'Vagner');
+  try
+
+  finally
+    lDtmExemplo.Free;
+  end;
+end;
+
+end.

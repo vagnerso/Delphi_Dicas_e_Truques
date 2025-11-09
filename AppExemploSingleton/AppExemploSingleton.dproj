@@ -138,6 +138,11 @@
         <DCCReference Include="uAppConstants.pas"/>
         <DCCReference Include="uAppFunctions.pas"/>
         <DCCReference Include="uConfiguracoesGlobais.pas"/>
+        <DCCReference Include="dExemplo.pas">
+            <Form>dtmExemplo</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

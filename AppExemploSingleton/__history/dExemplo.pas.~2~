@@ -1,0 +1,35 @@
+unit dExemplo;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TdtmExemplo = class(TDataModule)
+  private
+    { Private declarations }
+  public
+      constructor Create(AOwner: TComponent; AName: String); override;
+    { Public declarations }
+
+  end;
+
+var
+  dtmExemplo: TdtmExemplo;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+{ TDataModule1 }
+
+constructor TdtmExemplo.Create(AOwner: TComponent; AName: String);
+begin
+  inherited;
+  Showmessage(AName);
+end;
+
+end.

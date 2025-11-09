@@ -1,0 +1,151 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Sistema de Relat'#243'rio de Clientes'
+  ClientHeight = 572
+  ClientWidth = 1042
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 15
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 145
+    Width = 1042
+    Height = 407
+    Align = alClient
+    DataSource = dtsClientes
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1042
+    Height = 57
+    Align = alTop
+    Caption = 'Importa'#231#227'o de dados'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    ExplicitWidth = 792
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 57
+    Width = 1042
+    Height = 88
+    Align = alTop
+    TabOrder = 2
+    ExplicitWidth = 794
+    object Button1: TButton
+      Left = 501
+      Top = 1
+      Width = 256
+      Height = 86
+      Align = alLeft
+      Caption = 'Listar Clientes'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = Button1Click
+      ExplicitLeft = 1
+      ExplicitHeight = 58
+    end
+    object Button2: TButton
+      Left = 1
+      Top = 1
+      Width = 250
+      Height = 86
+      Align = alLeft
+      Caption = 'Importa'#231#227'o padr'#227'o'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 251
+      Top = 1
+      Width = 250
+      Height = 86
+      Align = alLeft
+      Caption = 'Importa'#231#227'o com Array DML'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      OnClick = Button3Click
+      ExplicitLeft = 76
+    end
+    object Button4: TButton
+      Left = 880
+      Top = 32
+      Width = 129
+      Height = 50
+      Caption = 'Gerar dados no TXT'
+      TabOrder = 3
+      OnClick = Button4Click
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 552
+    Width = 1042
+    Height = 20
+    Align = alBottom
+    Caption = 'Vagner | Dicas de Programa'#231#227'o'
+    TabOrder = 3
+    ExplicitTop = 544
+    ExplicitWidth = 792
+  end
+  object conClientes: TFDConnection
+    Params.Strings = (
+      
+        'Database=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Arra' +
+        'yDml\dados\database'
+      'DriverID=SQLite')
+    LoginPrompt = False
+    Left = 504
+    Top = 72
+  end
+  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
+    Left = 624
+    Top = 72
+  end
+  object qryClientes: TFDQuery
+    Connection = conClientes
+    SQL.Strings = (
+      'select * from customer')
+    Left = 640
+    Top = 168
+  end
+  object dtsClientes: TDataSource
+    DataSet = qryClientes
+    Left = 520
+    Top = 200
+  end
+end

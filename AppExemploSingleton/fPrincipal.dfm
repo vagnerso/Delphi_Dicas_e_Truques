@@ -14,7 +14,7 @@ object frmPrincipal: TfrmPrincipal
   TextHeight = 25
   object btnConfiguracoes: TButton
     Left = 144
-    Top = 128
+    Top = 40
     Width = 401
     Height = 97
     Caption = 'Configura'#231#245'es'
@@ -23,11 +23,20 @@ object frmPrincipal: TfrmPrincipal
   end
   object btnCadastroProdutos: TButton
     Left = 144
-    Top = 255
+    Top = 167
     Width = 401
     Height = 98
     Caption = 'Exibir conte'#250'do da configura'#231#227'o'
     TabOrder = 1
     OnClick = btnCadastroProdutosClick
+  end
+  object Button1: TButton
+    Left = 144
+    Top = 295
+    Width = 401
+    Height = 98
+    Caption = 'Criar data module'
+    TabOrder = 2
+    OnClick = Button1Click
   end
 end

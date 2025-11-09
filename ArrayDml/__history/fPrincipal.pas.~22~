@@ -1,0 +1,321 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.SQLite,
+  FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs, FireDAC.VCLUI.Wait,
+  FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.ExtCtrls,
+  System.Diagnostics, Vcl.Samples.Gauges;
+
+type
+  TfrmPrincipal = class(TForm)
+    DBGrid1: TDBGrid;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    btnListarClientes: TButton;
+    conClientes: TFDConnection;
+    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
+    qryClientes: TFDQuery;
+    dtsClientes: TDataSource;
+    btnImportacaoPadrao: TButton;
+    btnImportacaoArrayDml: TButton;
+    btnGerarDadosNoTxt: TButton;
+    qryClientesCustomerId: TIntegerField;
+    qryClientesFirstName: TWideStringField;
+    qryClientesLastName: TWideStringField;
+    qryClientesCompany: TWideStringField;
+    qryClientesAddress: TWideStringField;
+    qryClientesCity: TWideStringField;
+    qryClientesState: TWideStringField;
+    qryClientesCountry: TWideStringField;
+    qryClientesPostalCode: TWideStringField;
+    qryClientesPhone: TWideStringField;
+    qryClientesFax: TWideStringField;
+    qryClientesEmail: TWideStringField;
+    Panel4: TPanel;
+    lblTempoArrayDml: TLabel;
+    lblTempoPadrao: TLabel;
+    Gauge1: TGauge;
+    procedure btnListarClientesClick(Sender: TObject);
+    procedure btnImportacaoPadraoClick(Sender: TObject);
+    procedure btnImportacaoArrayDmlClick(Sender: TObject);
+    procedure btnGerarDadosNoTxtClick(Sender: TObject);
+  private
+    { Private declarations }
+    const INSERT_CUSTOMER = 'INSERT INTO Customer (CustomerId, FirstName, LastName, Company, Email) ' +
+      'VALUES (:CustomerId, :FirstName, :LastName, :Company, :Email)';
+
+      DELETE_CUSTOMER = 'DELETE FROM Customer';
+    procedure ListarClientes;
+
+    function caminhoArquivoCsvClientes: string;
+    procedure ApagarClientes;
+    procedure ExecutarTransacao(AConn: TFDConnection; AProc: TProc);
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnListarClientesClick(Sender: TObject);
+begin
+  ListarClientes;
+end;
+
+procedure TfrmPrincipal.btnImportacaoPadraoClick(Sender: TObject);
+var
+  Lista: TStringList;
+  Linha, CustomerId, FirstName, LastName, Company, Email: string;
+  Campos: TArray<string>;
+  i: Integer;
+  Qry: TFDQuery;
+  Stopwatch: TStopwatch;
+  ElapsedTimeInMilliseconds: Int64;
+  ElapsedSeconds, ElapsedMinutes: Double;
+begin
+
+  ApagarClientes;
+  ListarClientes;
+
+  Lista := TStringList.Create;
+  Qry := TFDQuery.Create(nil);
+  try
+    Qry.Connection := conClientes;
+
+    Lista.LoadFromFile(caminhoArquivoCsvClientes, TEncoding.UTF8);
+
+    Stopwatch := TStopwatch.StartNew;
+    Gauge1.MaxValue := Lista.Count;
+
+    // Ignora o cabeçalho do arquivo csv (primeira linha)
+    Qry.DisableControls;
+    for i := 1 to Lista.Count - 1 do
+    begin
+      Gauge1.Progress := i + 1;
+      Linha := Lista[i];
+      Campos := Linha.Split([',']);
+
+      if Length(Campos) >= 3 then
+      begin
+        CustomerId := Campos[0];
+        FirstName  := Campos[1];
+        LastName   := Campos[2];
+        Company    := Campos[3];
+        Email      := Campos[4];
+
+        Qry.SQL.Text := INSERT_CUSTOMER;
+
+        Qry.ParamByName('CustomerId').AsString := CustomerId;
+        Qry.ParamByName('FirstName').AsString  := FirstName;
+        Qry.ParamByName('LastName').AsString   := LastName;
+        Qry.ParamByName('Company').AsString    := Company;
+        Qry.ParamByName('Email').AsString      := Email;
+        Qry.ExecSQL;
+      end;
+    end;
+
+  Qry.EnableControls;
+  // Para o cronômetro
+  Stopwatch.Stop;
+
+  // Obtém o tempo decorrido em milissegundos
+  ElapsedTimeInMilliseconds := Stopwatch.ElapsedMilliseconds;
+  ElapsedSeconds := ElapsedTimeInMilliseconds / 1000;
+  ElapsedMinutes := ElapsedSeconds / 60;
+
+  lblTempoPadrao.Caption :=
+    Format('Tempo padrão: %d milissegundos (%.2f s / %.2f min) para ser concluída.',
+      [ElapsedTimeInMilliseconds, ElapsedSeconds, ElapsedMinutes]);
+
+  ListarClientes;
+  ShowMessage('Importação concluída com sucesso!');
+
+  finally
+    Qry.Free;
+    Lista.Free;
+  end;
+end;
+
+procedure TfrmPrincipal.btnImportacaoArrayDmlClick(Sender: TObject);
+var
+  Lista: TStringList;
+  Linha: string;
+  Campos: TArray<string>;
+  i, RowIndex: Integer;
+  ArraySize: Integer;
+  Qry: TFDQuery;
+  Stopwatch: TStopwatch;
+  ElapsedTimeInMilliseconds: Int64;
+  ElapsedSeconds, ElapsedMinutes: Double;
+begin
+
+  ApagarClientes;
+  ListarClientes;
+
+  Lista := TStringList.Create;
+  Qry := TFDQuery.Create(nil);
+  try
+    Qry.Connection := conClientes;
+    Lista.LoadFromFile(caminhoArquivoCsvClientes, TEncoding.UTF8);
+
+    ArraySize := 5000; // Tamanho do lote (ajuste conforme necessário)
+    Qry.SQL.Text := INSERT_CUSTOMER;
+
+
+    Qry.Params.ArraySize := ArraySize;
+
+    RowIndex := 0;
+
+    // Inicia um novo TStopwatch e começa a contagem
+    Stopwatch := TStopwatch.StartNew;
+
+    Gauge1.MaxValue := Lista.Count;
+    Qry.DisableControls;
+    for i := 1 to Lista.Count - 1 do
+    begin
+      Gauge1.Progress := i + 1;
+      Linha := Lista[i];
+      Campos := Linha.Split([',']);
+
+      if Length(Campos) >= 3 then
+      begin
+        Qry.ParamByName('CustomerId').AsStrings[RowIndex] := Campos[0];
+        Qry.ParamByName('FirstName').AsStrings[RowIndex]  := Campos[1];
+        Qry.ParamByName('LastName').AsStrings[RowIndex]   := Campos[2];
+        Qry.ParamByName('Company').AsStrings[RowIndex]    := Campos[3];
+        Qry.ParamByName('Email').AsStrings[RowIndex]      := Campos[4];
+        Inc(RowIndex);
+      end;
+
+      if RowIndex = ArraySize then
+      begin
+        Qry.Execute(ArraySize, 0);
+        RowIndex := 0;
+      end;
+    end;
+
+    if RowIndex > 0 then
+      Qry.Execute(RowIndex, 0);
+
+  Qry.EnableControls;
+    // Para o cronômetro
+  Stopwatch.Stop;
+
+  // Obtém o tempo decorrido em milissegundos
+  ElapsedTimeInMilliseconds := Stopwatch.ElapsedMilliseconds;
+  ElapsedSeconds := ElapsedTimeInMilliseconds / 1000;
+  ElapsedMinutes := ElapsedSeconds / 60;
+
+  lblTempoArrayDml.Caption :=
+    Format('Tempo com Array DML: %d milissegundos (%.2f s / %.2f min) para ser concluída.',
+      [ElapsedTimeInMilliseconds, ElapsedSeconds, ElapsedMinutes]);
+
+  ListarClientes;
+  ShowMessage('Importação concluída com sucesso!');
+
+  finally
+    Qry.Free;
+    Lista.Free;
+  end;
+end;
+
+procedure TfrmPrincipal.btnGerarDadosNoTxtClick(Sender: TObject);
+var
+  Lista: TStringList;
+  i: Integer;
+  CustomerId, FirstName, LastName, Company, Email: string;
+begin
+  Lista := TStringList.Create;
+  try
+    // Cabeçalho
+    Lista.Add('CustomerId,FirstName,LastName,Company,Email');
+
+    // Gera 100.000 registros fictícios
+    for i := 1 to 500000 do
+    begin
+      CustomerId :=  i.ToString;
+      FirstName  := 'Cliente' + IntToStr(i);
+      LastName  := 'Sobrenome' + IntToStr(i);
+      Company    := 'Empresa' + IntToStr((i mod 5000) + 1);
+      Email  := 'email' + IntToStr(i) + '@gmail.com';
+
+      Lista.Add(CustomerId + ',' + FirstName + ',' + LastName + ',' + Company + ',' + Email);
+    end;
+
+    // Garante que a pasta exista
+    ForceDirectories(ExtractFilePath(Application.ExeName)+'\dados');
+
+    // Salva o arquivo
+    Lista.SaveToFile(caminhoArquivoCsvClientes, TEncoding.UTF8);
+
+    ShowMessage('Arquivo CSV gerado com sucesso!');
+  finally
+    Lista.Free;
+  end;
+end;
+
+function TfrmPrincipal.caminhoArquivoCsvClientes: string;
+begin
+  Result:= ExtractFilePath(Application.ExeName) +'\dados\clientes.csv';
+end;
+
+procedure TfrmPrincipal.ApagarClientes;
+var
+  Qry: TFDQuery;
+begin
+
+  Qry := TFDQuery.Create(nil);
+  try
+    Qry.Connection := conClientes;
+
+    conClientes.StartTransaction;
+    try
+      Qry.SQL.Text := DELETE_CUSTOMER;
+      Qry.ExecSQL;
+
+      conClientes.Commit;
+    except on E: Exception do
+    begin
+      conClientes.Rollback;
+      ShowMessage('Erro ao limpar tabela...' + SlineBreak + E.Message);
+    end;
+    end;
+  finally
+    Qry.Free;
+  end;
+end;
+
+procedure TfrmPrincipal.ListarClientes;
+begin
+  qryClientes.Close;
+  qryClientes.Open;
+end;
+
+procedure TfrmPrincipal.ExecutarTransacao(AConn: TFDConnection; AProc: TProc);
+begin
+  AConn.StartTransaction;
+  try
+    AProc();
+    AConn.Commit;
+  except on E: Exception do
+  begin
+    AConn.Rollback;
+    ShowMessage('Erro ao tentar gravar no banco de daods!' + sLineBreak +
+    E.Message);
+  end;
+  end;
+end;
+
+end.

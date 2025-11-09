@@ -1,0 +1,341 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Sistema de Relat'#243'rio de Clientes'
+  ClientHeight = 572
+  ClientWidth = 1074
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 17
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 137
+    Width = 1074
+    Height = 311
+    Align = alClient
+    DataSource = dtsClientes
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -15
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'CustomerId'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'FirstName'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'LastName'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Company'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Email'
+        Width = 200
+        Visible = True
+      end>
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1074
+    Height = 57
+    Align = alTop
+    Caption = 
+      'Delphi Master Talks - Importa'#231#227'o de dados com Firedac + Array DM' +
+      'L'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    ExplicitWidth = 1040
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 57
+    Width = 1074
+    Height = 80
+    Align = alTop
+    TabOrder = 2
+    ExplicitWidth = 1042
+    object btnListarClientes: TButton
+      Left = 421
+      Top = 1
+      Width = 210
+      Height = 78
+      Align = alLeft
+      Caption = 'Listar Clientes'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnListarClientesClick
+      ExplicitHeight = 86
+    end
+    object btnImportacaoPadrao: TButton
+      Left = 1
+      Top = 1
+      Width = 210
+      Height = 78
+      Align = alLeft
+      Caption = 'Importa'#231#227'o padr'#227'o'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnImportacaoPadraoClick
+      ExplicitHeight = 86
+    end
+    object btnImportacaoArrayDml: TButton
+      Left = 211
+      Top = 1
+      Width = 210
+      Height = 78
+      Align = alLeft
+      Caption = 'Importa'#231#227'o com Array DML'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      OnClick = btnImportacaoArrayDmlClick
+      ExplicitHeight = 86
+    end
+    object btnGerarDadosNoTxt: TButton
+      Left = 631
+      Top = 1
+      Width = 210
+      Height = 78
+      Align = alLeft
+      Caption = 'Gerar dados no TXT'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      OnClick = btnGerarDadosNoTxtClick
+      ExplicitHeight = 86
+    end
+    object btnApagarClientes: TButton
+      Left = 841
+      Top = 1
+      Width = 210
+      Height = 78
+      Align = alLeft
+      Caption = 'Apagar Clientes'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 4
+      OnClick = btnApagarClientesClick
+      ExplicitLeft = 855
+      ExplicitTop = -4
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 528
+    Width = 1074
+    Height = 44
+    Align = alBottom
+    Caption = 'Dicas de Programa'#231#227'o'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+    ExplicitTop = 520
+    ExplicitWidth = 1040
+  end
+  object Panel4: TPanel
+    Left = 0
+    Top = 448
+    Width = 1074
+    Height = 80
+    Align = alBottom
+    TabOrder = 4
+    ExplicitTop = 440
+    ExplicitWidth = 1040
+    DesignSize = (
+      1074
+      80)
+    object lblTempoArrayDml: TLabel
+      Left = 16
+      Top = 48
+      Width = 173
+      Height = 21
+      Caption = 'Tempo com Array DML'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lblTempoPadrao: TLabel
+      Left = 16
+      Top = 14
+      Width = 110
+      Height = 21
+      Caption = 'Tempo Padr'#227'o'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Gauge1: TGauge
+      Left = 799
+      Top = 21
+      Width = 262
+      Height = 44
+      Anchors = [akTop, akRight]
+      ForeColor = 65408
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      Progress = 0
+      ExplicitLeft = 767
+    end
+  end
+  object conClientes: TFDConnection
+    Params.Strings = (
+      
+        'Database=D:\Projetos\projetos_delphi\Delphi_Dicas_e_Truques\Arra' +
+        'yDml\dados\database'
+      'DriverID=SQLite')
+    LoginPrompt = False
+    Left = 928
+    Top = 472
+  end
+  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
+    Left = 920
+    Top = 216
+  end
+  object qryClientes: TFDQuery
+    Connection = conClientes
+    SQL.Strings = (
+      'select * from customer')
+    Left = 920
+    Top = 368
+    object qryClientesCustomerId: TIntegerField
+      FieldName = 'CustomerId'
+      Origin = 'CustomerId'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object qryClientesFirstName: TWideStringField
+      FieldName = 'FirstName'
+      Origin = 'FirstName'
+      Required = True
+      Size = 32767
+    end
+    object qryClientesLastName: TWideStringField
+      FieldName = 'LastName'
+      Origin = 'LastName'
+      Required = True
+      Size = 32767
+    end
+    object qryClientesCompany: TWideStringField
+      FieldName = 'Company'
+      Origin = 'Company'
+      Size = 32767
+    end
+    object qryClientesAddress: TWideStringField
+      FieldName = 'Address'
+      Origin = 'Address'
+      Size = 32767
+    end
+    object qryClientesCity: TWideStringField
+      FieldName = 'City'
+      Origin = 'City'
+      Size = 32767
+    end
+    object qryClientesState: TWideStringField
+      FieldName = 'State'
+      Origin = 'State'
+      Size = 32767
+    end
+    object qryClientesCountry: TWideStringField
+      FieldName = 'Country'
+      Origin = 'Country'
+      Size = 32767
+    end
+    object qryClientesPostalCode: TWideStringField
+      FieldName = 'PostalCode'
+      Origin = 'PostalCode'
+      Size = 32767
+    end
+    object qryClientesPhone: TWideStringField
+      FieldName = 'Phone'
+      Origin = 'Phone'
+      Size = 32767
+    end
+    object qryClientesFax: TWideStringField
+      FieldName = 'Fax'
+      Origin = 'Fax'
+      Size = 32767
+    end
+    object qryClientesEmail: TWideStringField
+      FieldName = 'Email'
+      Origin = 'Email'
+      Required = True
+      Size = 32767
+    end
+  end
+  object dtsClientes: TDataSource
+    DataSet = qryClientes
+    Left = 928
+    Top = 288
+  end
+end

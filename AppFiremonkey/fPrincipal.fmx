@@ -1,0 +1,149 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 576
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Panel1: TPanel
+    Align = Top
+    Size.Width = 576.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Label2: TLabel
+      Align = Center
+      Text = 'App Firemonkey'
+      TabOrder = 0
+    end
+  end
+  object Expander1: TExpander
+    Align = Top
+    Position.Y = 49.000000000000000000
+    ShowCheck = False
+    Size.Width = 576.000000000000000000
+    Size.Height = 168.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    ContentSize = '143'
+    object Button1: TButton
+      Position.X = 416.000000000000000000
+      Position.Y = 96.000000000000000000
+      Size.Width = 137.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Confirmar'
+      TextSettings.Trimming = None
+    end
+    object CalloutPanel1: TCalloutPanel
+      Padding.Top = 11.000000000000000000
+      Position.X = 416.000000000000000000
+      Position.Y = -17.000000000000000000
+      Size.Width = 137.000000000000000000
+      Size.Height = 105.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      CalloutWidth = 23.000000000000000000
+      CalloutLength = 11.000000000000000000
+      object Label1: TLabel
+        Position.X = 4.000000000000000000
+        Position.Y = 24.000000000000000000
+        Text = 'Texto informativo'
+        TabOrder = 0
+      end
+    end
+    object DateEdit1: TDateEdit
+      Date = 45962.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 2.000000000000000000
+      TabOrder = 2
+    end
+    object CheckBox1: TCheckBox
+      Position.X = 8.000000000000000000
+      Position.Y = 40.000000000000000000
+      TabOrder = 3
+      Text = 'CheckBox1'
+    end
+    object TimeEdit1: TTimeEdit
+      Time = 0.363078379629629600
+      Position.X = 116.000000000000000000
+      Position.Y = 2.000000000000000000
+      TabOrder = 4
+    end
+  end
+  object Switch1: TSwitch
+    IsChecked = False
+    Position.X = 8.000000000000000000
+    Position.Y = 225.000000000000000000
+    TabOrder = 2
+  end
+  object CornerButton1: TCornerButton
+    Position.X = 8.000000000000000000
+    Position.Y = 260.000000000000000000
+    Sides = [Top, Left, Bottom, Right]
+    Size.Width = 172.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'CornerButton1'
+    TextSettings.Trimming = None
+    XRadius = 15.000000000000000000
+    YRadius = 15.000000000000000000
+  end
+  object Calendar1: TCalendar
+    Date = 45962.000000000000000000
+    Position.X = 388.000000000000000000
+    Position.Y = 225.000000000000000000
+    Size.Width = 180.000000000000000000
+    Size.Height = 160.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+  end
+  object NumberBox1: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 6
+    Cursor = crIBeam
+    Position.X = 8.000000000000000000
+    Position.Y = 336.000000000000000000
+    Size.Width = 172.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object ComboEdit1: TComboEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 7
+    ItemHeight = 19.000000000000000000
+    ItemIndex = -1
+    Position.X = 8.000000000000000000
+    Position.Y = 376.000000000000000000
+    Size.Width = 172.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object ComboTrackBar1: TComboTrackBar
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 8
+    Cursor = crIBeam
+    KeyboardType = NumberPad
+    Position.X = 8.000000000000000000
+    Position.Y = 416.000000000000000000
+    Size.Width = 172.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object SpinBox1: TSpinBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 9
+    Cursor = crIBeam
+    Position.X = 8.000000000000000000
+    Position.Y = 450.000000000000000000
+    Size.Width = 172.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+end
