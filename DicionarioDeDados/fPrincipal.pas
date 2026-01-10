@@ -1,0 +1,95 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  System.Generics.Collections;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    btnBuscar: TButton;
+    btnListar: TButton;
+    mmoLista: TMemo;
+    Label1: TLabel;
+    edtBuscar: TEdit;
+    Label2: TLabel;
+    lblResultadoBusca: TLabel;
+    procedure FormShow(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure btnBuscarClick(Sender: TObject);
+    procedure btnListarClick(Sender: TObject);
+  private
+    { Private declarations }
+    FAtalhos: TDictionary<String, String>;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnBuscarClick(Sender: TObject);
+var
+  lFuncao: String;
+begin
+
+  if FAtalhos.TryGetValue(edtBuscar.Text, lFuncao) then
+  begin
+    lblResultadoBusca.Caption := 'Função do atalho: ' + lFuncao;
+  end
+  else
+  begin
+    lblResultadoBusca.Caption := 'Atalho não encontrado!';
+  end;
+
+end;
+
+procedure TfrmPrincipal.btnListarClick(Sender: TObject);
+var
+  lAtalho: String;
+begin
+
+  mmoLista.Lines.Clear;
+
+ for lAtalho in FAtalhos.Keys do
+ begin
+   mmoLista.Lines.Add(lAtalho + ' -> ' + FAtalhos.Items[lAtalho]);
+ end;
+
+end;
+
+procedure TfrmPrincipal.FormCreate(Sender: TObject);
+begin
+  FAtalhos := TDictionary<String, String>.Create;
+
+  FAtalhos.Add('Ctrl+C', 'Copiar');
+  FAtalhos.Add('Ctrl+V', 'Colar');
+  FAtalhos.Add('Ctrl+S', 'Salvar');
+  FAtalhos.Add('Ctrl+Z', 'Desfazer');
+  FAtalhos.Add('Ctrl+P', 'Imprimir');
+  FAtalhos.Add('Ctrl+A', 'Selecionar tudo');
+
+end;
+
+procedure TfrmPrincipal.FormDestroy(Sender: TObject);
+begin
+  FAtalhos.Free;
+end;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  lblResultadoBusca.Caption := EmptyStr;
+end;
+
+end.
+

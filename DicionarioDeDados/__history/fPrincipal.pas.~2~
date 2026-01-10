@@ -1,0 +1,67 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  System.Generics.Collections;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    btnBuscar: TButton;
+    btnListar: TButton;
+    mmoLista: TMemo;
+    Label1: TLabel;
+    edtBuscar: TEdit;
+    Label2: TLabel;
+    lblResultadoBusca: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure btnBuscarClick(Sender: TObject);
+  private
+    { Private declarations }
+    FAtalhos: TDictionary<string, string>;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnBuscarClick(Sender: TObject);
+var
+  Funcao: string;
+begin
+  if FAtalhos.TryGetValue(edtBuscar.Text, Funcao) then
+    lblResultadoBusca.Caption := 'Função: ' + Funcao
+  else
+    lblResultadoBusca.Caption := 'Atalho não encontrado.';
+
+end;
+
+procedure TfrmPrincipal.FormCreate(Sender: TObject);
+begin
+  FAtalhos := TDictionary<String, String>.Create;
+
+  FAtalhos.Add('Ctrl+C', 'Copiar');
+  FAtalhos.Add('Ctrl+V', 'Colar');
+  FAtalhos.Add('Ctrl+S', 'Salvar');
+  FAtalhos.Add('Ctrl+Z', 'Desfazer');
+  FAtalhos.Add('Ctrl+P', 'Imprimir');
+
+end;
+
+procedure TfrmPrincipal.FormDestroy(Sender: TObject);
+begin
+  FAtalhos.Free;
+end;
+
+end.

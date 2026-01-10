@@ -1,0 +1,120 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Cofre Gen'#233'rico'
+  ClientHeight = 422
+  ClientWidth = 507
+  Color = clSilver
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -19
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 25
+  object Label1: TLabel
+    Left = 8
+    Top = 66
+    Width = 69
+    Height = 25
+    Caption = 'N'#250'mero'
+  end
+  object Label2: TLabel
+    Left = 256
+    Top = 66
+    Width = 61
+    Height = 25
+    Caption = 'Palavra'
+  end
+  object btnGuardarNumero: TButton
+    Left = 8
+    Top = 144
+    Width = 233
+    Height = 57
+    Caption = 'Guardar n'#250'mero'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    OnClick = btnGuardarNumeroClick
+  end
+  object btnGuardarPalavra: TButton
+    Left = 255
+    Top = 144
+    Width = 236
+    Height = 57
+    Caption = 'Guardar palavra'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    OnClick = btnGuardarPalavraClick
+  end
+  object MemoLog: TMemo
+    Left = 8
+    Top = 216
+    Width = 484
+    Height = 185
+    BorderStyle = bsNone
+    Color = 16744576
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+  end
+  object pnlTitulo: TPanel
+    Left = 0
+    Top = 0
+    Width = 507
+    Height = 59
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Cofre Gen'#233'rico'
+    Color = 16711808
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 3
+    StyleName = 'Windows'
+  end
+  object edtNumero: TEdit
+    Left = 8
+    Top = 97
+    Width = 233
+    Height = 33
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = 8388672
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    NumbersOnly = True
+    ParentFont = False
+    TabOrder = 4
+  end
+  object edtPalavra: TEdit
+    Left = 256
+    Top = 97
+    Width = 236
+    Height = 33
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = 8388672
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 5
+  end
+end

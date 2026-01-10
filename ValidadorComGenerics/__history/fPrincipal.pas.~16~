@@ -1,0 +1,88 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TCofreGenerico<T> = class
+  private
+    FSegredo: T;
+  public
+    constructor Create(ASegredo: T);
+    function RevelarSegredo: T;
+  end;
+
+type
+  TfrmPrincipal = class(TForm)
+    ButtonInt: TButton;
+    ButtonString: TButton;
+    MemoLog: TMemo;
+    pnlTitulo: TPanel;
+    edtValorInteiro: TEdit;
+    Label1: TLabel;
+    edtValorString: TEdit;
+    Label2: TLabel;
+    procedure ButtonIntClick(Sender: TObject);
+    procedure ButtonStringClick(Sender: TObject);
+  private
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.ButtonIntClick(Sender: TObject);
+var
+  lCofreInteiro: TCofreGenerico<Integer>;
+begin
+
+  lCofreInteiro := TCofreGenerico<Integer>.Create(StrToIntDef(edtValorInteiro.Text, 0));
+  try
+    lCofreInteiro.RevelarSegredo;
+    MemoLog.Lines.Add('Cofre de Inteiro: ' + lCofreInteiro.RevelarSegredo.ToString);
+
+  finally
+    lCofreInteiro.Free;
+  end;
+
+end;
+
+{ TCofreGenerico<T> }
+
+constructor TCofreGenerico<T>.Create(ASegredo: T);
+begin
+  FSegredo := ASegredo;
+end;
+
+function TCofreGenerico<T>.RevelarSegredo: T;
+begin
+  Result := FSegredo;
+end;
+
+procedure TfrmPrincipal.ButtonStringClick(Sender: TObject);
+var
+  lCofreString: TCofreGenerico<string>;
+begin
+
+  lCofreString := TCofreGenerico<string>.Create(edtValorString.Text);
+  try
+
+    MemoLog.Lines.Add('Cofre de String: ' + lCofreString.RevelarSegredo);
+
+  finally
+    lCofreString.Free;
+  end;
+
+end;
+
+end.

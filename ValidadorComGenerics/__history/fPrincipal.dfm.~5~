@@ -1,0 +1,41 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'frmPrincipal'
+  ClientHeight = 588
+  ClientWidth = 647
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object ButtonInt: TButton
+    Left = 64
+    Top = 104
+    Width = 169
+    Height = 57
+    Caption = 'ButtonInt'
+    TabOrder = 0
+    OnClick = ButtonIntClick
+  end
+  object ButtonString: TButton
+    Left = 328
+    Top = 112
+    Width = 169
+    Height = 57
+    Caption = 'ButtonString'
+    TabOrder = 1
+    OnClick = ButtonStringClick
+  end
+  object MemoLog: TMemo
+    Left = 40
+    Top = 328
+    Width = 505
+    Height = 241
+    Lines.Strings = (
+      'MemoLog')
+    TabOrder = 2
+  end
+end
